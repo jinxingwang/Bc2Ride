@@ -9,7 +9,6 @@
 import UIKit
 
 class CEViewController: UIViewController {
-    
     @IBOutlet weak var inputEventDescription: UITextView!
     @IBOutlet weak var inputEventName: UITextField!
     @IBOutlet weak var inputEmail: UITextField!
