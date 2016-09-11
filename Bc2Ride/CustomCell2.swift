@@ -9,6 +9,8 @@
 import UIKit
 
 class CustomCell2: UITableViewCell {
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var eventName: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

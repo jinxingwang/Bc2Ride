@@ -11,6 +11,7 @@ import UIKit
 class CustomCell: UITableViewCell {
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()

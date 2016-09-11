@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A2691D8384E5006F6F64 /* CustomCell.swift */; };
 		BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE68A26A1D8384E5006F6F64 /* CustomCell.xib */; };
+		BE68A26F1D8387DC006F6F64 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A26D1D8387DC006F6F64 /* CustomCell2.swift */; };
+		BE68A2701D8387DC006F6F64 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE68A26E1D8387DC006F6F64 /* CustomCell2.xib */; };
 		BE7B191C1D81D70B00A0F2B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B191B1D81D70B00A0F2B6 /* AppDelegate.swift */; };
 		BE7B191E1D81D70B00A0F2B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B191D1D81D70B00A0F2B6 /* ViewController.swift */; };
 		BE7B19211D81D70B00A0F2B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE7B191F1D81D70B00A0F2B6 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 /* Begin PBXFileReference section */
 		BE68A2691D8384E5006F6F64 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BE68A26A1D8384E5006F6F64 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
+		BE68A26D1D8387DC006F6F64 /* CustomCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
+		BE68A26E1D8387DC006F6F64 /* CustomCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
 		BE7B19181D81D70B00A0F2B6 /* Bc2Ride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bc2Ride.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7B191B1D81D70B00A0F2B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE7B191D1D81D70B00A0F2B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				BE7B19271D81D70B00A0F2B6 /* Info.plist */,
 				BE68A2691D8384E5006F6F64 /* CustomCell.swift */,
 				BE68A26A1D8384E5006F6F64 /* CustomCell.xib */,
+				BE68A26D1D8387DC006F6F64 /* CustomCell2.swift */,
+				BE68A26E1D8387DC006F6F64 /* CustomCell2.xib */,
 			);
 			path = Bc2Ride;
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 				BE7B19231D81D70B00A0F2B6 /* Assets.xcassets in Resources */,
 				BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */,
 				BE7B19211D81D70B00A0F2B6 /* Main.storyboard in Resources */,
+				BE68A2701D8387DC006F6F64 /* CustomCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +161,7 @@
 				BE7B19321D81E26D00A0F2B6 /* CEViewController.swift in Sources */,
 				BE7B191E1D81D70B00A0F2B6 /* ViewController.swift in Sources */,
 				BE7B19341D821F8E00A0F2B6 /* SEViewController.swift in Sources */,
+				BE68A26F1D8387DC006F6F64 /* CustomCell2.swift in Sources */,
 				BE7B19301D81E0FC00A0F2B6 /* FEViewController.swift in Sources */,
 				BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */,
 				BE7B191C1D81D70B00A0F2B6 /* AppDelegate.swift in Sources */,

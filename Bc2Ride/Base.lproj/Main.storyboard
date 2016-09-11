@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bc2Ride" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC" id="BYZ-38-t0r" customClass="ViewController" customModule="Bc2Ride" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="354"/>
+            <point key="canvasLocation" x="-21" y="-4"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="9xM-em-4C3">
@@ -125,11 +125,12 @@
                     </view>
                     <connections>
                         <outlet property="eventView" destination="mY4-Xi-nOx" id="AwP-Fd-ltL"/>
+                        <segue destination="nTJ-vt-1Nl" kind="show" identifier="showEvent" id="a1n-Js-S62"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsQ-Uq-bAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="-352"/>
+            <point key="canvasLocation" x="754" y="-788"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="czi-XT-0UP">
@@ -250,12 +251,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDS-Ke-FN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1084" y="354"/>
+            <point key="canvasLocation" x="754" y="790"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Tfx-6e-93H">
             <objects>
-                <viewController id="nTJ-vt-1Nl" customClass="SEViewController" customModule="Bc2Ride" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SEVC" id="nTJ-vt-1Nl" customClass="SEViewController" customModule="Bc2Ride" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yBM-Rm-xRK"/>
                         <viewControllerLayoutGuide type="bottom" id="dDt-wn-iQh"/>
@@ -264,14 +265,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-h8-7o1">
-                                <rect key="frame" x="161" y="77" width="259" height="422"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21m-DN-Ixy">
+                                <rect key="frame" x="20" y="532" width="560" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="Home"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="zzf-Ch-vyI"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cg8-h8-7o1">
+                                <rect key="frame" x="20" y="77" width="560" height="422"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="21m-DN-Ixy" firstAttribute="trailing" secondItem="xjD-qU-o0O" secondAttribute="trailingMargin" id="3ye-TK-cP9"/>
+                            <constraint firstItem="cg8-h8-7o1" firstAttribute="leading" secondItem="21m-DN-Ixy" secondAttribute="leading" id="NNe-om-uRb"/>
+                            <constraint firstItem="cg8-h8-7o1" firstAttribute="trailing" secondItem="21m-DN-Ixy" secondAttribute="trailing" id="bnj-Zm-fmz"/>
+                            <constraint firstItem="21m-DN-Ixy" firstAttribute="top" secondItem="cg8-h8-7o1" secondAttribute="bottom" constant="33" id="kdS-jl-koK"/>
+                            <constraint firstItem="21m-DN-Ixy" firstAttribute="leading" secondItem="xjD-qU-o0O" secondAttribute="leadingMargin" id="n9j-GX-U12"/>
+                            <constraint firstAttribute="bottom" secondItem="21m-DN-Ixy" secondAttribute="bottom" constant="20" symbolic="YES" id="uB8-m0-tiB"/>
+                            <constraint firstItem="cg8-h8-7o1" firstAttribute="top" secondItem="yBM-Rm-xRK" secondAttribute="bottom" constant="57" id="zoQ-kb-fbb"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="showUP" destination="cg8-h8-7o1" id="O4N-dB-dyv"/>
@@ -279,10 +297,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lex-aC-lS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="354"/>
+            <point key="canvasLocation" x="754" y="-4"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xJp-su-PFd"/>
+        <segue reference="a1n-Js-S62"/>
     </inferredMetricsTieBreakers>
 </document>

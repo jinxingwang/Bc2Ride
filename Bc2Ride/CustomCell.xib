@@ -18,18 +18,23 @@
                         <rect key="frame" x="8" y="0.0" width="43" height="43"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-h1-ArA">
-                        <rect key="frame" x="91" y="11" width="156" height="21"/>
+                        <rect key="frame" x="59" y="0.0" width="200" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwk-s3-4lh">
+                        <rect key="frame" x="267" y="0.0" width="46" height="43"/>
+                        <state key="normal" title="Button"/>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
+                <outlet property="eventButton" destination="nwk-s3-4lh" id="Rj1-BY-kuH"/>
                 <outlet property="eventImage" destination="rOJ-BF-K3d" id="jys-nJ-as5"/>
                 <outlet property="eventName" destination="nnw-h1-ArA" id="JoA-Tw-edN"/>
             </connections>
-            <point key="canvasLocation" x="225.5" y="300"/>
+            <point key="canvasLocation" x="372.5" y="591"/>
         </tableViewCell>
     </objects>
 </document>

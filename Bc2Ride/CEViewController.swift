@@ -28,17 +28,7 @@ class CEViewController: UIViewController {
     @IBAction func didCreateTouchup(sender: UIButton) {
         
     }
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(sender?.tag == 2){
-            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            DestVC.receiveEventDescription = inputEventDescription.text!
-            DestVC.receiveEventName = inputEventName.text!
-            DestVC.receiveEmail = inputEmail.text!
-            DestVC.receiveName = inputName.text!
-            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-        }
-    }
-
+    
     /*
     // MARK: - Navigation
 
@@ -49,4 +39,14 @@ class CEViewController: UIViewController {
     }
     */
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(sender?.tag == 2){
+            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+            DestVC.receiveEventDescription = inputEventDescription.text!
+            DestVC.receiveEventName = inputEventName.text!
+            DestVC.receiveEmail = inputEmail.text!
+            DestVC.receiveName = inputName.text!
+            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        }
+    }
 }
