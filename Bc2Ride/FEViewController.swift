@@ -9,12 +9,13 @@
 import UIKit
 
 class FEViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
-    var dateReciver = String()
     @IBOutlet weak var eventView: UITableView!
     var lables = ["BC", "ICF"]
+    var dateReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(dateReciver)
         // Do any additional setup after loading the view.
         self.eventView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         let nib = UINib(nibName: "CustomCell", bundle: nil)
@@ -47,6 +48,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.eventName.text = lables[indexPath.row]
         cell.eventButton.tag = indexPath.row
         cell.eventButton.addTarget(self, action: #selector(FEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
+        cell.eventIdReciver = "number from parse + \(lables[indexPath.row])"
         return cell
 
     }
@@ -63,22 +65,18 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBAction func showInfo(sender: UIButton){
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SEViewController = storyboard.instantiateViewControllerWithIdentifier("SEVC") as! SEViewController
-        vc.receiveEventDescription = "11"
-        vc.receiveEventName = "22"
-        vc.receiveEmail = "3"
-        vc.receiveName = "4"
-        vc.receiveEventData = "5"
+        // event id
+        let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
+        vc.dateReciver = "event id: " + cell.eventIdReciver
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showEvent"){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            DestVC.receiveEventDescription = "1"
-            DestVC.receiveEventName = "2"
-            DestVC.receiveEmail = "3"
-            DestVC.receiveName = "4"
-            DestVC.receiveEventData = "5"
+            // event id
+            let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
+            DestVC.dateReciver = "event id: " + cell.eventIdReciver
             self.eventView.deselectRowAtIndexPath(self.eventView.indexPathForSelectedRow!, animated: true)
         }
     }

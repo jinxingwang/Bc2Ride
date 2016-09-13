@@ -9,7 +9,7 @@
 import UIKit
 
 class EIViewController: UIViewController {
-
+    var dateReciver = String()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

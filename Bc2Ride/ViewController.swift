@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var didInputDate: UITextField!
+    @IBOutlet weak var data: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,10 @@ class ViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 1){
             let DestVC : FEViewController = segue.destinationViewController as! FEViewController
-            DestVC.dateReciver = didInputDate.text!
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yy"
+            let dateString = dateFormatter.stringFromDate(data.date)
+            DestVC.dateReciver = dateString
         }
     }
 

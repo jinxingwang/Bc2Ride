@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -18,13 +17,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bc2Ride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFV-qW-xIs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bc2Ride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFV-qW-xIs">
                                 <rect key="frame" x="20" y="28" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeV-rf-27V">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" verticalHuggingPriority="249" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeV-rf-27V">
                                 <rect key="frame" x="218" y="176" width="163" height="98"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Find a Event"/>
@@ -34,13 +33,13 @@
                                     <segue destination="PyS-Gx-Ra5" kind="show" id="v0H-Fq-EiH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm/dd/yy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yl5-jZ-mCG">
-                                <rect key="frame" x="129" y="138" width="350" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm/dd/yy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yl5-jZ-mCG">
+                                <rect key="frame" x="125" y="98" width="350" height="30"/>
                                 <color key="backgroundColor" red="0.80655474202915767" green="0.97428700546604463" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8W-rkl">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8W-rkl">
                                 <rect key="frame" x="203" y="353" width="194" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Create a Event"/>
@@ -50,23 +49,23 @@
                                     <segue destination="ydt-NZ-KDa" kind="show" id="gVr-8r-pel"/>
                                 </connections>
                             </button>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gUV-Na-9jC">
+                                <rect key="frame" x="20" y="143" width="560" height="53"/>
+                                <date key="date" timeIntervalSinceReferenceDate="495427844.83684897">
+                                    <!--2016-09-13 02:50:44 +0000-->
+                                </date>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="473338800">
+                                    <!--2016-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="yl5-jZ-mCG" secondAttribute="trailing" constant="101" id="37x-tn-4iN"/>
-                            <constraint firstItem="CeV-rf-27V" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Irg-Qu-IiQ"/>
-                            <constraint firstItem="yl5-jZ-mCG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="109" id="Oxs-my-wZm"/>
-                            <constraint firstItem="MFV-qW-xIs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Pur-B0-pbq"/>
-                            <constraint firstItem="yl5-jZ-mCG" firstAttribute="top" secondItem="MFV-qW-xIs" secondAttribute="bottom" constant="62" id="dfM-jj-o6j"/>
-                            <constraint firstItem="MFV-qW-xIs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="exj-8L-jCv"/>
-                            <constraint firstItem="MFV-qW-xIs" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="kIr-O4-8mE"/>
-                            <constraint firstItem="L66-8W-rkl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qJT-K5-PGV"/>
-                            <constraint firstItem="L66-8W-rkl" firstAttribute="top" secondItem="CeV-rf-27V" secondAttribute="bottom" constant="79" id="sup-fN-TwS"/>
-                            <constraint firstItem="CeV-rf-27V" firstAttribute="top" secondItem="yl5-jZ-mCG" secondAttribute="bottom" constant="8" id="xxH-qT-ESr"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="L66-8W-rkl" secondAttribute="bottom" constant="199" id="yvQ-3T-OBe"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="data" destination="gUV-Na-9jC" id="wmx-Ew-SVT"/>
                         <outlet property="didInputDate" destination="yl5-jZ-mCG" id="ZzT-dy-dI3"/>
                     </connections>
                 </viewController>
@@ -118,7 +117,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YsQ-Uq-bAd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2130" y="-740"/>
+            <point key="canvasLocation" x="-1730" y="-812"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VHO-pS-Pyn">
@@ -152,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kku-di-yOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1445" y="-740"/>
+            <point key="canvasLocation" x="-725" y="-824"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="czi-XT-0UP">
@@ -240,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDS-Ke-FN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2130" y="652"/>
+            <point key="canvasLocation" x="-1702" y="888"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Tfx-6e-93H">
@@ -323,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lex-aC-lS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2130" y="-44"/>
+            <point key="canvasLocation" x="-1730" y="-32"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="EDO-XA-aHt">
@@ -387,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvS-B3-TKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1445" y="-44"/>
+            <point key="canvasLocation" x="-733" y="-44"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="amZ-Yj-fUu">
@@ -439,12 +438,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jg6-PH-V8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1445" y="652"/>
+            <point key="canvasLocation" x="-725" y="848"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="xJp-su-PFd"/>
-        <segue reference="PCH-6k-Rm3"/>
+        <segue reference="v0H-Fq-EiH"/>
         <segue reference="a1n-Js-S62"/>
     </inferredMetricsTieBreakers>
 </document>

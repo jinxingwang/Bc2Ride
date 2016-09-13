@@ -14,6 +14,7 @@ class CEViewController: UIViewController {
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var inputEventData: UIDatePicker!
+    var dateReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +44,13 @@ class CEViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 2){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            DestVC.receiveEventDescription = inputEventDescription.text!
-            DestVC.receiveEventName = inputEventName.text!
-            DestVC.receiveEmail = inputEmail.text!
-            DestVC.receiveName = inputName.text!
-            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+            // event id
+            DestVC.dateReciver = "event id"
+//            DestVC.receiveEventDescription = inputEventDescription.text!
+//            DestVC.receiveEventName = inputEventName.text!
+//            DestVC.receiveEmail = inputEmail.text!
+//            DestVC.receiveName = inputName.text!
+//            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         }
     }
 }

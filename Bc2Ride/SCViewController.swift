@@ -9,9 +9,10 @@
 import UIKit
 
 class SCViewController: UIViewController {
-
+    var dateReciver = String()
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("SCVC" + dateReciver)
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
     }

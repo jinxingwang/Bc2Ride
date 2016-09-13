@@ -9,19 +9,15 @@
 import UIKit
 
 class SEViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var receiveEventDescription = String()
-    var receiveEventName = String()
-    var receiveEmail = String()
-    var receiveName = String()
-    var receiveEventData = String()
-    
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var carView: UITableView!
     var names = ["will", "yih"]
     var space = ["3", "4"]
+    var dateReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("SEVC" + dateReciver)
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "CustomCell2", bundle: nil)
         carView.registerNib(nib, forCellReuseIdentifier: "cell2")
@@ -53,6 +49,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.space.text = "space available:\(space[indexPath.row])"
         cell.carButton.tag = indexPath.row
         cell.carButton.addTarget(self, action: #selector(SEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
+        cell.carIdReciver = "number from parse \(names[indexPath.row])"
         return cell
         
     }
@@ -67,15 +64,20 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     @IBAction func showInfo(sender: UIButton){
-        print("haha")
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SCViewController = storyboard.instantiateViewControllerWithIdentifier("SCVC") as! SCViewController
+        // car id
+        let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
+        vc.dateReciver = "car id: " + cell.carIdReciver
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showCar"){
             let DestVC : SCViewController = segue.destinationViewController as! SCViewController
+            // car id
+            let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
+            DestVC.dateReciver = "car id: " + cell.carIdReciver
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
         }
     }

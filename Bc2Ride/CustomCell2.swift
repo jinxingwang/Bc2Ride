@@ -12,7 +12,8 @@ class CustomCell2: UITableViewCell {
     @IBOutlet weak var driverName: UILabel!
     @IBOutlet weak var space: UILabel!
     @IBOutlet weak var carButton: UIButton!
-
+    var carIdReciver = String()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
