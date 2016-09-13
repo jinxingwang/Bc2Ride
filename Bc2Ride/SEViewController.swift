@@ -75,7 +75,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "showCar"){
+        
+        if(segue.identifier == "showCar"){// click cell
             let DestVC : SCViewController = segue.destinationViewController as! SCViewController
             let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
             // give car id
@@ -83,7 +84,26 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventIdReciver = eventIdReciver
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+        }else if(sender?.tag == 1){ // need more ride
+
+        }else if(sender?.tag == 2){ // give a ride
+            let DestVC : GRViewController = segue.destinationViewController as! GRViewController
+            // give event id
+            DestVC.eventIdReciver = eventIdReciver
+        }else if(sender?.tag == 3){ // cancle
+            let DestVC : FEViewController = segue.destinationViewController as! FEViewController
+            // give event id
+            DestVC.eventIdReciver = eventIdReciver
+        }else if(sender?.tag == 4){ // home
+            
+        }else if(sender?.tag == 5){ //edit (todo later)
+        
+        }else if(sender?.tag == 6){ // info
+            let DestVC : EIViewController = segue.destinationViewController as! EIViewController
+            // give event id
+            DestVC.eventIdReciver = eventIdReciver
         }
+
     }
 
 }

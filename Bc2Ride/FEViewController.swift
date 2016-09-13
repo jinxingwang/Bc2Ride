@@ -12,10 +12,11 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var eventView: UITableView!
     var lables = ["BC", "ICF"]
     var eventDataReciver = String()
+    var eventIdReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(eventDataReciver)
+        print(eventDataReciver + eventIdReciver)
         // Do any additional setup after loading the view.
         self.eventView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         let nib = UINib(nibName: "CustomCell", bundle: nil)

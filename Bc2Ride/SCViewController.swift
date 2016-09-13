@@ -35,7 +35,6 @@ class SCViewController: UIViewController {
     */
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if(segue.identifier == "showEvent"){
         // go back
         if(sender?.tag == 0 || sender?.tag == 1){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
