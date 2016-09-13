@@ -20,7 +20,7 @@ class CEViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,25 +31,25 @@ class CEViewController: UIViewController {
     }
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 2){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // event id
             DestVC.eventIdReciver = "event id"
-//            DestVC.receiveEventDescription = inputEventDescription.text!
-//            DestVC.receiveEventName = inputEventName.text!
-//            DestVC.receiveEmail = inputEmail.text!
-//            DestVC.receiveName = inputName.text!
-//            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+            //            DestVC.receiveEventDescription = inputEventDescription.text!
+            //            DestVC.receiveEventName = inputEventName.text!
+            //            DestVC.receiveEmail = inputEmail.text!
+            //            DestVC.receiveName = inputName.text!
+            //            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         }
     }
 }

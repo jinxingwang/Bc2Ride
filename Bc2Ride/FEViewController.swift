@@ -25,21 +25,21 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         //removing empty rows
         eventView.tableFooterView = UIView()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.lables.count
     }
@@ -51,7 +51,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.eventButton.addTarget(self, action: #selector(FEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
         cell.eventIdReciver = "number from parse + \(lables[indexPath.row])"
         return cell
-
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -66,7 +66,8 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBAction func showInfo(sender: UIButton){
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SEViewController = storyboard.instantiateViewControllerWithIdentifier("SEVC") as! SEViewController
-        let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
+        let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
+        let cell = eventView.cellForRowAtIndexPath(indexPath) as! CustomCell
         // give event id
         vc.eventIdReciver = cell.eventIdReciver
         self.presentViewController(vc, animated: true, completion: nil)
