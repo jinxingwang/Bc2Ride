@@ -14,7 +14,6 @@ class CEViewController: UIViewController {
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputName: UITextField!
     @IBOutlet weak var inputEventData: UIDatePicker!
-    var dateReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +44,7 @@ class CEViewController: UIViewController {
         if(sender?.tag == 2){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // event id
-            DestVC.dateReciver = "event id"
+            DestVC.eventIdReciver = "event id"
 //            DestVC.receiveEventDescription = inputEventDescription.text!
 //            DestVC.receiveEventName = inputEventName.text!
 //            DestVC.receiveEmail = inputEmail.text!

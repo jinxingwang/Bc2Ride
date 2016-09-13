@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var didInputDate: UITextField!
-    @IBOutlet weak var data: UIDatePicker!
+    @IBOutlet weak var datapicked: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +22,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func didFindaEventTouchUp(sender: UIButton) {
-        
-    }
-    
-    @IBAction func didCreateaEventTouchUp(sender: UIButton) {
-        
-    }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 1){
             let DestVC : FEViewController = segue.destinationViewController as! FEViewController
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM/dd/yy"
-            let dateString = dateFormatter.stringFromDate(data.date)
-            DestVC.dateReciver = dateString
+            let dateString = dateFormatter.stringFromDate(datapicked.date)
+            DestVC.eventDataReciver = dateString
         }
     }
 

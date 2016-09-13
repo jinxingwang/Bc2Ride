@@ -13,11 +13,11 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var carView: UITableView!
     var names = ["will", "yih"]
     var space = ["3", "4"]
-    var dateReciver = String()
+    var eventIdReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SEVC" + dateReciver)
+        print("SEVC" + eventIdReciver)
         // Do any additional setup after loading the view.
         let nib = UINib(nibName: "CustomCell2", bundle: nil)
         carView.registerNib(nib, forCellReuseIdentifier: "cell2")
@@ -66,18 +66,22 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBAction func showInfo(sender: UIButton){
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SCViewController = storyboard.instantiateViewControllerWithIdentifier("SCVC") as! SCViewController
-        // car id
         let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
-        vc.dateReciver = "car id: " + cell.carIdReciver
+        // give car id
+        vc.carIdReciver = cell.carIdReciver
+        // give event id
+        vc.eventIdReciver = eventIdReciver
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showCar"){
             let DestVC : SCViewController = segue.destinationViewController as! SCViewController
-            // car id
             let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
-            DestVC.dateReciver = "car id: " + cell.carIdReciver
+            // give car id
+            DestVC.carIdReciver = cell.carIdReciver
+            // give event id
+            DestVC.eventIdReciver = eventIdReciver
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
         }
     }

@@ -28,8 +28,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Find a Event"/>
                                 <connections>
-                                    <action selector="didFindaEventTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J7R-vh-h4U"/>
-                                    <action selector="didFindaEventTouchUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="nFa-Xi-aDr"/>
                                     <segue destination="PyS-Gx-Ra5" kind="show" id="v0H-Fq-EiH"/>
                                 </connections>
                             </button>
@@ -44,8 +42,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Create a Event"/>
                                 <connections>
-                                    <action selector="didCreateaEventTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ynh-tv-smE"/>
-                                    <action selector="didCreateaEventTouchUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="pwz-rK-WHF"/>
                                     <segue destination="ydt-NZ-KDa" kind="show" id="gVr-8r-pel"/>
                                 </connections>
                             </button>
@@ -65,7 +61,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="data" destination="gUV-Na-9jC" id="wmx-Ew-SVT"/>
+                        <outlet property="datapicked" destination="gUV-Na-9jC" id="Qc4-TQ-JZB"/>
                         <outlet property="didInputDate" destination="yl5-jZ-mCG" id="ZzT-dy-dI3"/>
                     </connections>
                 </viewController>
@@ -373,7 +369,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="where you are waiting for student?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DfY-Lf-KfU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="where you are waiting for students?" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="DfY-Lf-KfU">
                                 <rect key="frame" x="46" y="178" width="508" height="73"/>
                                 <color key="backgroundColor" red="1" green="0.94614128070000003" blue="0.81781778130000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.13369229999999999" green="0.3803109516" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -442,8 +438,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xJp-su-PFd"/>
-        <segue reference="v0H-Fq-EiH"/>
-        <segue reference="a1n-Js-S62"/>
+        <segue reference="PCH-6k-Rm3"/>
+        <segue reference="4xt-OG-QEA"/>
+        <segue reference="Aws-qW-CzL"/>
     </inferredMetricsTieBreakers>
 </document>

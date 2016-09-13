@@ -11,11 +11,11 @@ import UIKit
 class FEViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var eventView: UITableView!
     var lables = ["BC", "ICF"]
-    var dateReciver = String()
+    var eventDataReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(dateReciver)
+        print(eventDataReciver)
         // Do any additional setup after loading the view.
         self.eventView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         let nib = UINib(nibName: "CustomCell", bundle: nil)
@@ -65,18 +65,18 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBAction func showInfo(sender: UIButton){
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SEViewController = storyboard.instantiateViewControllerWithIdentifier("SEVC") as! SEViewController
-        // event id
         let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
-        vc.dateReciver = "event id: " + cell.eventIdReciver
+        // give event id
+        vc.eventIdReciver = cell.eventIdReciver
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showEvent"){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            // event id
             let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
-            DestVC.dateReciver = "event id: " + cell.eventIdReciver
+            // give event id
+            DestVC.eventIdReciver = cell.eventIdReciver
             self.eventView.deselectRowAtIndexPath(self.eventView.indexPathForSelectedRow!, animated: true)
         }
     }

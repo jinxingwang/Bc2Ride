@@ -9,10 +9,11 @@
 import UIKit
 
 class SCViewController: UIViewController {
-    var dateReciver = String()
+    var carIdReciver = String()
+    var eventIdReciver = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SCVC" + dateReciver)
+        print("SCVC" + carIdReciver)
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
     }
@@ -32,5 +33,15 @@ class SCViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        if(segue.identifier == "showEvent"){
+        // go back
+        if(sender?.tag == 0 || sender?.tag == 1){
+            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+            // give back event id
+            DestVC.eventIdReciver = eventIdReciver
+        }
+    }
 
 }

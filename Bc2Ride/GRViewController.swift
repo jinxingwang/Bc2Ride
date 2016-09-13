@@ -13,7 +13,7 @@ class GRViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var carSpace: UITextField!
-    var dateReciver = String()
+    var carIdReciver = String()
     
     @IBAction func EnterR(sender: UIButton) {
     }
