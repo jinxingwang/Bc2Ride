@@ -14,27 +14,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rOJ-BF-K3d">
-                        <rect key="frame" x="8" y="0.0" width="43" height="43"/>
-                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-h1-ArA">
-                        <rect key="frame" x="59" y="0.0" width="200" height="43"/>
+                        <rect key="frame" x="0.0" y="0.0" width="259" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwk-s3-4lh">
                         <rect key="frame" x="267" y="0.0" width="46" height="43"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Detial"/>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="eventButton" destination="nwk-s3-4lh" id="Rj1-BY-kuH"/>
-                <outlet property="eventImage" destination="rOJ-BF-K3d" id="jys-nJ-as5"/>
                 <outlet property="eventName" destination="nnw-h1-ArA" id="JoA-Tw-edN"/>
             </connections>
-            <point key="canvasLocation" x="372.5" y="591"/>
+            <point key="canvasLocation" x="318.5" y="259"/>
         </tableViewCell>
     </objects>
 </document>

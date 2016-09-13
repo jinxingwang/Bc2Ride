@@ -2,15 +2,16 @@
 //  CustomCell2.swift
 //  Bc2Ride
 //
-//  Created by jinxingwang on 9/9/16.
+//  Created by jinxingwang on 9/10/16.
 //  Copyright © 2016 jinxingwang. All rights reserved.
 //
 
 import UIKit
 
 class CustomCell2: UITableViewCell {
-    @IBOutlet weak var eventImage: UIImageView!
-    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var driverName: UILabel!
+    @IBOutlet weak var space: UILabel!
+    @IBOutlet weak var carButton: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
