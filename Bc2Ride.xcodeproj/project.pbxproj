@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26B4B7508D04FA978F708D37 /* Pods_Bc2Ride.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DB33C930B0A255EC6AD62D /* Pods_Bc2Ride.framework */; };
 		BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A2691D8384E5006F6F64 /* CustomCell.swift */; };
 		BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE68A26A1D8384E5006F6F64 /* CustomCell.xib */; };
 		BE68A2771D851314006F6F64 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A2751D851314006F6F64 /* CustomCell2.swift */; };
@@ -21,10 +22,14 @@
 		BE7B19301D81E0FC00A0F2B6 /* FEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B192F1D81E0FC00A0F2B6 /* FEViewController.swift */; };
 		BE7B19321D81E26D00A0F2B6 /* CEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B19311D81E26D00A0F2B6 /* CEViewController.swift */; };
 		BE7B19341D821F8E00A0F2B6 /* SEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B19331D821F8E00A0F2B6 /* SEViewController.swift */; };
+		BEA4A99A1D89FC350091D82D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9981D89FC350091D82D /* Bolts.framework */; };
+		BEA4A99B1D89FC350091D82D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9991D89FC350091D82D /* Parse.framework */; };
 		BEBA7DB11D87864B0012A7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEBA7DAF1D87864B0012A7BA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		76B77255493D14238560842B /* Pods-Bc2Ride.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bc2Ride.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride.release.xcconfig"; sourceTree = "<group>"; };
+		B7A12B992DB2483206AD2D4A /* Pods-Bc2Ride.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bc2Ride.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride.debug.xcconfig"; sourceTree = "<group>"; };
 		BE68A2691D8384E5006F6F64 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BE68A26A1D8384E5006F6F64 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		BE68A2751D851314006F6F64 /* CustomCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
@@ -35,13 +40,18 @@
 		BE7B19181D81D70B00A0F2B6 /* Bc2Ride.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bc2Ride.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE7B191B1D81D70B00A0F2B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE7B191D1D81D70B00A0F2B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE7B19221D81D70B00A0F2B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE7B19221D81D70B00A0F2B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Bc2Ride/Assets.xcassets; sourceTree = "<group>"; };
 		BE7B19251D81D70B00A0F2B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BE7B19271D81D70B00A0F2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE7B19271D81D70B00A0F2B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Bc2Ride/Info.plist; sourceTree = "<group>"; };
 		BE7B192F1D81E0FC00A0F2B6 /* FEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FEViewController.swift; sourceTree = "<group>"; };
 		BE7B19311D81E26D00A0F2B6 /* CEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEViewController.swift; sourceTree = "<group>"; };
 		BE7B19331D821F8E00A0F2B6 /* SEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEViewController.swift; sourceTree = "<group>"; };
+		BEA4A9961D89FBEF0091D82D /* KYCircularProgress.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KYCircularProgress.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/KYCircularProgress/KYCircularProgress.framework"; sourceTree = "<group>"; };
+		BEA4A9981D89FC350091D82D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
+		BEA4A9991D89FC350091D82D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse/Parse.framework"; sourceTree = "<group>"; };
 		BEBA7DB01D87864B0012A7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BECE26951D89F9F30040E061 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
+		C6DB33C930B0A255EC6AD62D /* Pods_Bc2Ride.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bc2Ride.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +59,55 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA4A99A1D89FC350091D82D /* Bolts.framework in Frameworks */,
+				BEA4A99B1D89FC350091D82D /* Parse.framework in Frameworks */,
+				26B4B7508D04FA978F708D37 /* Pods_Bc2Ride.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95B7AF385CF97786BE145538 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7A12B992DB2483206AD2D4A /* Pods-Bc2Ride.debug.xcconfig */,
+				76B77255493D14238560842B /* Pods-Bc2Ride.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE0BA0E31D89D85B009BE588 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BEA4A9981D89FC350091D82D /* Bolts.framework */,
+				BEA4A9991D89FC350091D82D /* Parse.framework */,
+				BEA4A9961D89FBEF0091D82D /* KYCircularProgress.framework */,
+				BECE26951D89F9F30040E061 /* SwiftyJSON.framework */,
+				C6DB33C930B0A255EC6AD62D /* Pods_Bc2Ride.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE0BA0F81D89DA16009BE588 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BE7B19221D81D70B00A0F2B6 /* Assets.xcassets */,
+				BEBA7DAF1D87864B0012A7BA /* Main.storyboard */,
+				BE7B19241D81D70B00A0F2B6 /* LaunchScreen.storyboard */,
+				BE7B19271D81D70B00A0F2B6 /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		BE7B190F1D81D70B00A0F2B6 = {
 			isa = PBXGroup;
 			children = (
 				BE7B191A1D81D70B00A0F2B6 /* Bc2Ride */,
+				BE0BA0F81D89DA16009BE588 /* Resources */,
+				BE0BA0E31D89D85B009BE588 /* Frameworks */,
 				BE7B19191D81D70B00A0F2B6 /* Products */,
+				95B7AF385CF97786BE145538 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,10 +130,6 @@
 				BE68A27B1D872107006F6F64 /* SCViewController.swift */,
 				BE68A27D1D872116006F6F64 /* GRViewController.swift */,
 				BE68A27F1D872BAE006F6F64 /* EIViewController.swift */,
-				BE7B19221D81D70B00A0F2B6 /* Assets.xcassets */,
-				BEBA7DAF1D87864B0012A7BA /* Main.storyboard */,
-				BE7B19241D81D70B00A0F2B6 /* LaunchScreen.storyboard */,
-				BE7B19271D81D70B00A0F2B6 /* Info.plist */,
 				BE68A2691D8384E5006F6F64 /* CustomCell.swift */,
 				BE68A26A1D8384E5006F6F64 /* CustomCell.xib */,
 				BE68A2751D851314006F6F64 /* CustomCell2.swift */,
@@ -101,9 +145,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BE7B192A1D81D70B00A0F2B6 /* Build configuration list for PBXNativeTarget "Bc2Ride" */;
 			buildPhases = (
+				F3B13362DE1BB302ADB3ADBE /* [CP] Check Pods Manifest.lock */,
 				BE7B19141D81D70B00A0F2B6 /* Sources */,
 				BE7B19151D81D70B00A0F2B6 /* Frameworks */,
 				BE7B19161D81D70B00A0F2B6 /* Resources */,
+				BCAA2E0EE5CD0751C4E397BA /* [CP] Embed Pods Frameworks */,
+				922F7952608A4101DF205F25 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -162,6 +209,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		922F7952608A4101DF205F25 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCAA2E0EE5CD0751C4E397BA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F3B13362DE1BB302ADB3ADBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BE7B19141D81D70B00A0F2B6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -189,6 +284,7 @@
 				BE7B19251D81D70B00A0F2B6 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = Bc2Ride;
 			sourceTree = "<group>";
 		};
 		BEBA7DAF1D87864B0012A7BA /* Main.storyboard */ = {
@@ -197,6 +293,7 @@
 				BEBA7DB01D87864B0012A7BA /* Base */,
 			);
 			name = Main.storyboard;
+			path = Bc2Ride;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -289,8 +386,14 @@
 		};
 		BE7B192B1D81D70B00A0F2B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7A12B992DB2483206AD2D4A /* Pods-Bc2Ride.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Parse",
+				);
 				INFOPLIST_FILE = Bc2Ride/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WillWang.Bc2Ride;
@@ -300,8 +403,14 @@
 		};
 		BE7B192C1D81D70B00A0F2B6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 76B77255493D14238560842B /* Pods-Bc2Ride.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/Parse",
+				);
 				INFOPLIST_FILE = Bc2Ride/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WillWang.Bc2Ride;

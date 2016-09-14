@@ -11,9 +11,9 @@ import UIKit
 class SCViewController: UIViewController {
     var carIdReciver = String()
     var eventIdReciver = String()
+    var eventDataReciver = String()
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("SCVC" + carIdReciver)
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
     }
@@ -39,6 +39,7 @@ class SCViewController: UIViewController {
         if(sender?.tag == 0 || sender?.tag == 1){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
+            DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }
     }

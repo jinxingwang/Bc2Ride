@@ -127,7 +127,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mL7-mM-ViB">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mL7-mM-ViB">
                                 <rect key="frame" x="20" y="532" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
                                 <state key="normal" title="back"/>
@@ -144,6 +144,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="eventInfo" destination="Pu0-sc-J4Q" id="6ey-IN-hW3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kku-di-yOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -438,8 +441,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="PCH-6k-Rm3"/>
-        <segue reference="4xt-OG-QEA"/>
+        <segue reference="7JX-Ak-Lzf"/>
         <segue reference="Aws-qW-CzL"/>
+        <segue reference="PCH-6k-Rm3"/>
     </inferredMetricsTieBreakers>
 </document>

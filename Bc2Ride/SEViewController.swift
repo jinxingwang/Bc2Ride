@@ -7,20 +7,22 @@
 //
 
 import UIKit
+import Parse
 
 class SEViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var carView: UITableView!
-    var names = ["will", "yih"]
-    var space = ["3", "4"]
+    var carNames: [String] = []
+    var carSpaces: [String] = []
     var eventIdReciver = String()
+    var eventDataReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadEvent()
         let nib = UINib(nibName: "CustomCell2", bundle: nil)
         carView.registerNib(nib, forCellReuseIdentifier: "cell2")
-        print("SEVC" + eventIdReciver)
     }
     
     override func didReceiveMemoryWarning() {
@@ -38,18 +40,39 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
      // Pass the selected object to the new view controller.
      }
      */
+    func loadEvent(){
+        let query = PFQuery(className:"car")
+        query.whereKey("eventId", equalTo:eventIdReciver)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        self.carNames.append("\(object["carName"])")
+                        self.carSpaces.append("\(object["carSpace"])")
+                    }
+                }
+                self.carView.reloadData()
+            } else {
+                
+            }
+        }
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.names.count
+        return self.carNames.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = carView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! CustomCell2
-        cell.driverName.text = "driver:\(names[indexPath.row])"
-        cell.space.text = "space available:\(space[indexPath.row])"
+        cell.driverName.text = "driver:\(carNames[indexPath.row])"
+        cell.space.text = "space available:\(carSpaces[indexPath.row])"
         cell.carButton.tag = indexPath.row
         cell.carButton.addTarget(self, action: #selector(SEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
-        cell.carIdReciver = "number from parse \(names[indexPath.row])"
+        cell.carIdReciver = "number from parse \(carNames[indexPath.row])"
         return cell
         
     }
@@ -59,7 +82,6 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("select \(indexPath.row) row")
         self.performSegueWithIdentifier("showCar", sender: self)
     }
     
@@ -83,6 +105,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give car id
             DestVC.carIdReciver = cell.carIdReciver
             // give event id
+            DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
         }else if(sender?.tag == 1){ // need more ride
@@ -90,10 +113,12 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         }else if(sender?.tag == 2){ // give a ride
             let DestVC : GRViewController = segue.destinationViewController as! GRViewController
             // give event id
+            DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }else if(sender?.tag == 3){ // cancle
             let DestVC : FEViewController = segue.destinationViewController as! FEViewController
             // give event id
+            DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }else if(sender?.tag == 4){ // home
             
@@ -102,6 +127,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         }else if(sender?.tag == 6){ // info
             let DestVC : EIViewController = segue.destinationViewController as! EIViewController
             // give event id
+            DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }
         

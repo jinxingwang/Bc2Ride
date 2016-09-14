@@ -14,10 +14,10 @@ class GRViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var carSpace: UITextField!
     var eventIdReciver = String()
+    var eventDataReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(eventIdReciver)
         // Do any additional setup after loading the view.
         self.hideKeyboardWhenTappedAround()
     }
@@ -43,6 +43,7 @@ class GRViewController: UIViewController, UITextFieldDelegate {
         if(sender?.tag == 0 || sender?.tag == 1){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
+            DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }
     }

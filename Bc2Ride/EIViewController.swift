@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class EIViewController: UIViewController {
     var eventIdReciver = String()
+    var eventDataReciver = String()
+    @IBOutlet weak var eventInfo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadEventInfo()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -20,7 +25,6 @@ class EIViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     /*
      // MARK: - Navigation
@@ -31,5 +35,34 @@ class EIViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    func loadEventInfo(){
+        let query = PFQuery(className:"event")
+        query.whereKey("objectId", equalTo:eventIdReciver)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        //print("\(object["eventInfo"])")
+                        self.eventInfo.text = "\(object["eventInfo"] as! String)"
+                    }
+                }
+            } else {
+                
+            }
+        }
+    }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // go back
+        if(sender?.tag == 1){
+            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+            // give back event id
+            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventIdReciver = eventIdReciver
+        }
+    }
 }
