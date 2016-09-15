@@ -47,19 +47,37 @@ class GRViewController: UIViewController, UITextFieldDelegate {
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }else if(sender?.tag == 1){
-            let newcar = PFObject(className:"car")
-            newcar["eventId"] = eventIdReciver
-            newcar["carName"] = name.text
-            newcar["carInfo"] = carInfo.text
-            newcar["carSpace"] = Int(carSpace.text!)
-            newcar["phoneNumber"] = phoneNumber.text!
-            newcar.saveInBackground()
-            
-            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            // give back event id
-            DestVC.eventDataReciver = eventDataReciver
-            DestVC.eventIdReciver = eventIdReciver
+            if(name.text?.isEmpty as! BooleanType){
+                alertPop()
+            }else if(carSpace.text?.isEmpty as! BooleanType){
+                alertPop()
+            }else if(phoneNumber.text?.isEmpty as! BooleanType){
+                alertPop()
+            }else{
+                let newcar = PFObject(className:"car")
+                newcar["eventId"] = eventIdReciver
+                newcar["carName"] = name.text
+                newcar["carInfo"] = carInfo.text
+                newcar["carSpace"] = Int(carSpace.text!)
+                newcar["phoneNumber"] = phoneNumber.text!
+                newcar.saveInBackground()
+                
+                let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+                // give back event id
+                DestVC.eventDataReciver = eventDataReciver
+                DestVC.eventIdReciver = eventIdReciver
+            }
         }
+    }
+    func alertPop() {
+        let alert = UIAlertController(title: "Missing inputs", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
+            UIAlertAction in
+        }
+        
+        alert.addAction(enterAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }
 

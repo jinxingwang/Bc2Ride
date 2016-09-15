@@ -43,18 +43,34 @@ class CEViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 2){
-            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            let newEvent = PFObject(className:"event")
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "MM/dd/yy"
-            let dateString = dateFormatter.stringFromDate(inputEventData.date)
-            newEvent["eventName"] = inputEventName.text
-            newEvent["eventData"] = dateString
-            newEvent["eventInfo"] = inputEventDescription.text
-            newEvent.saveInBackground()
-            
-            // give back event id
-            DestVC.eventDataReciver = dateString
+            if(inputEventName.text?.isEmpty as! BooleanType){
+                alertPop()
+            }else if(inputEventDescription.text?.isEmpty as! BooleanType){
+                alertPop()
+            }else{
+                let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+                let newEvent = PFObject(className:"event")
+                let dateFormatter = NSDateFormatter()
+                dateFormatter.dateFormat = "MM/dd/yy"
+                let dateString = dateFormatter.stringFromDate(inputEventData.date)
+                newEvent["eventName"] = inputEventName.text
+                newEvent["eventData"] = dateString
+                newEvent["eventInfo"] = inputEventDescription.text
+                newEvent.saveInBackground()
+                
+                // give back event id
+                DestVC.eventDataReciver = dateString
+            }
         }
+    }
+    
+    func alertPop() {
+        let alert = UIAlertController(title: "Missing inputs", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
+            UIAlertAction in
+        }
+        alert.addAction(enterAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

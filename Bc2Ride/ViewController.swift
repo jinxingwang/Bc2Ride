@@ -10,7 +10,6 @@ import UIKit
 import Parse
 
 class ViewController: UIViewController {
-//    @IBOutlet weak var didInputDate: UITextField!
     @IBOutlet weak var datapicked: UIDatePicker!
     
     override func viewDidLoad() {

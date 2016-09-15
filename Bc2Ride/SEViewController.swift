@@ -89,12 +89,12 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
-//        if(carSpaces[indexPath.row] <= 0){
-//            // todo pop a window
-//            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
-//        }else{
-//            self.performSegueWithIdentifier("showCar", sender: self)
-//        }
+        //        if(carSpaces[indexPath.row] <= 0){
+        //            // todo pop a window
+        //            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+        //        }else{
+        //            self.performSegueWithIdentifier("showCar", sender: self)
+        //        }
     }
     
     @IBAction func showInfo(sender: UIButton){

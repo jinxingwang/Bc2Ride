@@ -77,7 +77,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plw-Ff-2LV">
                                 <rect key="frame" x="20" y="532" width="560" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <state key="normal" title="Home"/>
+                                <state key="normal" title="home"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="xJp-su-PFd"/>
                                 </connections>
@@ -224,7 +224,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHp-go-Fb1">
                                 <rect key="frame" x="302" y="532" width="250" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <state key="normal" title="Create"/>
+                                <state key="normal" title="create"/>
                                 <connections>
                                     <action selector="didCreateTouchup:" destination="ydt-NZ-KDa" eventType="touchUpInside" id="0PX-6V-DVC"/>
                                     <action selector="didCreateTouchup:" destination="ydt-NZ-KDa" eventType="touchUpOutside" id="K9J-kM-kiD"/>
@@ -234,7 +234,7 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kSN-1x-b68">
                                 <rect key="frame" x="50" y="532" width="250" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <state key="normal" title="Cancle"/>
+                                <state key="normal" title="cancel"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="CXe-Fw-BtG"/>
                                 </connections>
@@ -291,7 +291,7 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb0-EV-x9k">
                                 <rect key="frame" x="49" y="533" width="250" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <state key="normal" title="cancle"/>
+                                <state key="normal" title="cancel"/>
                                 <connections>
                                     <segue destination="PyS-Gx-Ra5" kind="show" id="PCH-6k-Rm3"/>
                                 </connections>
@@ -357,7 +357,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1qg-wd-5wq">
                                 <rect key="frame" x="46" y="532" width="250" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <state key="normal" title="back"/>
+                                <state key="normal" title="cancel"/>
                                 <connections>
                                     <segue destination="nTJ-vt-1Nl" kind="show" id="Jn8-RS-hEs"/>
                                 </connections>
@@ -427,7 +427,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPR-6I-UQF">
                                 <rect key="frame" x="46" y="532" width="250" height="48"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
-                                <state key="normal" title="back"/>
+                                <state key="normal" title="cancel"/>
                                 <connections>
                                     <segue destination="nTJ-vt-1Nl" kind="show" id="uff-IY-Yng"/>
                                 </connections>
@@ -480,12 +480,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jg6-PH-V8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-725" y="848"/>
+            <point key="canvasLocation" x="-733" y="836"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="oGg-4E-TTd"/>
-        <segue reference="Aws-qW-CzL"/>
-        <segue reference="v0H-Fq-EiH"/>
+        <segue reference="It1-tY-P4Z"/>
+        <segue reference="CXe-Fw-BtG"/>
+        <segue reference="PCH-6k-Rm3"/>
     </inferredMetricsTieBreakers>
 </document>
