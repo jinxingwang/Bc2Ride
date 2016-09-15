@@ -31,12 +31,6 @@
                                     <segue destination="PyS-Gx-Ra5" kind="show" id="v0H-Fq-EiH"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="mm/dd/yy" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yl5-jZ-mCG">
-                                <rect key="frame" x="125" y="98" width="350" height="30"/>
-                                <color key="backgroundColor" red="0.80655474202915767" green="0.97428700546604463" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8W-rkl">
                                 <rect key="frame" x="203" y="353" width="194" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -62,7 +56,6 @@
                     </view>
                     <connections>
                         <outlet property="datapicked" destination="gUV-Na-9jC" id="Qc4-TQ-JZB"/>
-                        <outlet property="didInputDate" destination="yl5-jZ-mCG" id="ZzT-dy-dI3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -153,6 +146,43 @@
             <point key="canvasLocation" x="-725" y="-824"/>
         </scene>
         <!--View Controller-->
+        <scene sceneID="Sl2-HH-IDT">
+            <objects>
+                <viewController storyboardIdentifier="SSVC" id="d2O-U7-ouC" customClass="SSViewController" customModule="Bc2Ride" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="haE-WP-4Iz"/>
+                        <viewControllerLayoutGuide type="bottom" id="dMZ-S7-Lpq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XI4-Po-7r7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNY-3O-zt1">
+                                <rect key="frame" x="20" y="289" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPQ-hu-iS2">
+                                <rect key="frame" x="20" y="532" width="560" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="nTJ-vt-1Nl" kind="show" id="oGg-4E-TTd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="lable" destination="nNY-3O-zt1" id="fdg-eY-mlL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Qn-Rs-lWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117" y="-44"/>
+        </scene>
+        <!--View Controller-->
         <scene sceneID="czi-XT-0UP">
             <objects>
                 <viewController storyboardIdentifier="CEVC" id="ydt-NZ-KDa" customClass="CEViewController" customModule="Bc2Ride" customModuleProvider="target" sceneMemberID="viewController">
@@ -170,28 +200,12 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="F17-CW-X3p">
-                                <rect key="frame" x="50" y="75" width="500" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ACZ-aa-3oS">
-                                <rect key="frame" x="50" y="113" width="500" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kQb-Pq-WfQ">
-                                <rect key="frame" x="50" y="151" width="500" height="30"/>
+                                <rect key="frame" x="50" y="64" width="500" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Even Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-Vz-ogD">
-                                <rect key="frame" x="50" y="270" width="500" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="aFv-ef-cgN">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="aFv-ef-cgN">
                                 <rect key="frame" x="50" y="299" width="500" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="495064909.61085403">
                                     <!--2016-09-08 22:01:49 +0000-->
@@ -201,7 +215,7 @@
                                 </date>
                             </datePicker>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Event Description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LhS-AL-NkZ">
-                                <rect key="frame" x="50" y="189" width="500" height="73"/>
+                                <rect key="frame" x="50" y="102" width="500" height="160"/>
                                 <color key="backgroundColor" red="1" green="0.94614128071090631" blue="0.81781778125668236" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.13369230001923094" green="0.38031095158359851" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -225,15 +239,19 @@
                                     <segue destination="BYZ-38-t0r" kind="show" id="CXe-Fw-BtG"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Even Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ib-Vz-ogD">
+                                <rect key="frame" x="50" y="270" width="500" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="inputEmail" destination="ACZ-aa-3oS" id="2jb-Uv-RE1"/>
                         <outlet property="inputEventData" destination="aFv-ef-cgN" id="hgm-xZ-Iw9"/>
                         <outlet property="inputEventDescription" destination="LhS-AL-NkZ" id="uBx-3w-KnG"/>
                         <outlet property="inputEventName" destination="kQb-Pq-WfQ" id="dxq-ZR-6ES"/>
-                        <outlet property="inputName" destination="F17-CW-X3p" id="Ctu-ZL-Z1Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tDS-Ke-FN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -317,6 +335,7 @@
                         <outlet property="carView" destination="hvP-sK-7dF" id="zAk-9b-sEz"/>
                         <outlet property="eventName" destination="r4K-fY-fUZ" id="g6N-iV-qrA"/>
                         <segue destination="fPm-lg-fFW" kind="show" identifier="showCar" id="Ypf-L1-Pr7"/>
+                        <segue destination="d2O-U7-ouC" kind="show" identifier="showStudents" id="J8u-Jm-Jef"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lex-aC-lS0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -465,8 +484,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="uff-IY-Yng"/>
+        <segue reference="oGg-4E-TTd"/>
         <segue reference="Aws-qW-CzL"/>
-        <segue reference="PCH-6k-Rm3"/>
+        <segue reference="v0H-Fq-EiH"/>
     </inferredMetricsTieBreakers>
 </document>

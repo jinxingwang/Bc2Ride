@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class CEViewController: UIViewController {
     @IBOutlet weak var inputEventDescription: UITextView!
@@ -43,13 +44,17 @@ class CEViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 2){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-            // event id
-            DestVC.eventIdReciver = "event id"
-            //            DestVC.receiveEventDescription = inputEventDescription.text!
-            //            DestVC.receiveEventName = inputEventName.text!
-            //            DestVC.receiveEmail = inputEmail.text!
-            //            DestVC.receiveName = inputName.text!
-            //            DestVC.receiveEventData = NSDateFormatter.localizedStringFromDate(inputEventData.date, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+            let newEvent = PFObject(className:"event")
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yy"
+            let dateString = dateFormatter.stringFromDate(inputEventData.date)
+            newEvent["eventName"] = inputEventName.text
+            newEvent["eventData"] = dateString
+            newEvent["eventInfo"] = inputEventDescription.text
+            newEvent.saveInBackground()
+            
+            // give back event id
+            DestVC.eventDataReciver = dateString
         }
     }
 }

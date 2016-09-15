@@ -21,6 +21,9 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("asd")
+        print(eventIdReciver)
+        print(eventDataReciver)
         loadEvent()
         let nib = UINib(nibName: "CustomCell2", bundle: nil)
         carView.registerNib(nib, forCellReuseIdentifier: "cell2")
@@ -74,6 +77,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.space.text = "space available:\(carSpaces[indexPath.row])"
         cell.carButton.tag = indexPath.row
         cell.carButton.addTarget(self, action: #selector(SEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
+        cell.studentButton.addTarget(self, action: #selector(SEViewController.showStudent(_:)), forControlEvents: .TouchUpInside)
         cell.carIdReciver = carIds[indexPath.row]
         return cell
         
@@ -84,12 +88,13 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(carSpaces[indexPath.row] <= 0){
-            // todo pop a window
-            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
-        }else{
-            self.performSegueWithIdentifier("showCar", sender: self)
-        }
+        self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+//        if(carSpaces[indexPath.row] <= 0){
+//            // todo pop a window
+//            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+//        }else{
+//            self.performSegueWithIdentifier("showCar", sender: self)
+//        }
     }
     
     @IBAction func showInfo(sender: UIButton){
@@ -107,6 +112,17 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             vc.eventIdReciver = eventIdReciver
             self.presentViewController(vc, animated: true, completion: nil)
         }
+    }
+    
+    @IBAction func showStudent(sender: UIButton){
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc: SSViewController = storyboard.instantiateViewControllerWithIdentifier("SSVC") as! SSViewController
+        let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
+        let cell = carView.cellForRowAtIndexPath(indexPath) as! CustomCell2
+        vc.carIdReciver = cell.carIdReciver
+        vc.eventDataReciver = eventDataReciver
+        vc.eventIdReciver = eventIdReciver
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

@@ -24,6 +24,7 @@
 		BE7B19341D821F8E00A0F2B6 /* SEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B19331D821F8E00A0F2B6 /* SEViewController.swift */; };
 		BEA4A99A1D89FC350091D82D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9981D89FC350091D82D /* Bolts.framework */; };
 		BEA4A99B1D89FC350091D82D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9991D89FC350091D82D /* Parse.framework */; };
+		BEA4A99D1D8A6A690091D82D /* SSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4A99C1D8A6A690091D82D /* SSViewController.swift */; };
 		BEBA7DB11D87864B0012A7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEBA7DAF1D87864B0012A7BA /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		BEA4A9961D89FBEF0091D82D /* KYCircularProgress.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KYCircularProgress.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/KYCircularProgress/KYCircularProgress.framework"; sourceTree = "<group>"; };
 		BEA4A9981D89FC350091D82D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
 		BEA4A9991D89FC350091D82D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse/Parse.framework"; sourceTree = "<group>"; };
+		BEA4A99C1D8A6A690091D82D /* SSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSViewController.swift; sourceTree = "<group>"; };
 		BEBA7DB01D87864B0012A7BA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BECE26951D89F9F30040E061 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		C6DB33C930B0A255EC6AD62D /* Pods_Bc2Ride.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bc2Ride.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				BE68A27B1D872107006F6F64 /* SCViewController.swift */,
 				BE68A27D1D872116006F6F64 /* GRViewController.swift */,
 				BE68A27F1D872BAE006F6F64 /* EIViewController.swift */,
+				BEA4A99C1D8A6A690091D82D /* SSViewController.swift */,
 				BE68A2691D8384E5006F6F64 /* CustomCell.swift */,
 				BE68A26A1D8384E5006F6F64 /* CustomCell.xib */,
 				BE68A2751D851314006F6F64 /* CustomCell2.swift */,
@@ -267,6 +270,7 @@
 				BE68A2801D872BAE006F6F64 /* EIViewController.swift in Sources */,
 				BE7B19341D821F8E00A0F2B6 /* SEViewController.swift in Sources */,
 				BE68A2771D851314006F6F64 /* CustomCell2.swift in Sources */,
+				BEA4A99D1D8A6A690091D82D /* SSViewController.swift in Sources */,
 				BE7B19301D81E0FC00A0F2B6 /* FEViewController.swift in Sources */,
 				BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */,
 				BE68A27E1D872116006F6F64 /* GRViewController.swift in Sources */,

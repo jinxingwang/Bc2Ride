@@ -30,12 +30,17 @@
                         <rect key="frame" x="350" y="8" width="88" height="85.5"/>
                         <state key="normal" title="Ride"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARJ-6r-odo">
+                        <rect key="frame" x="254" y="8" width="88" height="85.5"/>
+                        <state key="normal" title="Student list"/>
+                    </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
                 <outlet property="carButton" destination="gOK-KO-yEf" id="KZI-45-YvV"/>
                 <outlet property="driverName" destination="mIj-GT-GGd" id="lUF-Tu-am2"/>
                 <outlet property="space" destination="KQN-sH-0Do" id="5oR-AN-Mwi"/>
+                <outlet property="studentButton" destination="ARJ-6r-odo" id="OyF-DM-lR9"/>
             </connections>
             <point key="canvasLocation" x="349" y="213"/>
         </tableViewCell>
