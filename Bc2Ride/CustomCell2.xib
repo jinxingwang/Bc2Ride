@@ -28,7 +28,7 @@
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-KO-yEf">
                         <rect key="frame" x="350" y="8" width="88" height="85.5"/>
-                        <state key="normal" title="Button"/>
+                        <state key="normal" title="Ride"/>
                     </button>
                 </subviews>
             </tableViewCellContentView>

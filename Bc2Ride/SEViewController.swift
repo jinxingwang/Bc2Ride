@@ -13,7 +13,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var carView: UITableView!
     var carNames: [String] = []
-    var carSpaces: [String] = []
+    var carSpaces: [Int] = []
+    var carIds: [String] = []
     var eventIdReciver = String()
     var eventDataReciver = String()
     
@@ -52,7 +53,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 if let objects = objects {
                     for object in objects {
                         self.carNames.append("\(object["carName"])")
-                        self.carSpaces.append("\(object["carSpace"])")
+                        self.carSpaces.append(object["carSpace"] as! Int)
+                        self.carIds.append(object.objectId!)
                     }
                 }
                 self.carView.reloadData()
@@ -72,7 +74,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.space.text = "space available:\(carSpaces[indexPath.row])"
         cell.carButton.tag = indexPath.row
         cell.carButton.addTarget(self, action: #selector(SEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
-        cell.carIdReciver = "number from parse \(carNames[indexPath.row])"
+        cell.carIdReciver = carIds[indexPath.row]
         return cell
         
     }
@@ -82,7 +84,12 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("showCar", sender: self)
+        if(carSpaces[indexPath.row] <= 0){
+            // todo pop a window
+            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+        }else{
+            self.performSegueWithIdentifier("showCar", sender: self)
+        }
     }
     
     @IBAction func showInfo(sender: UIButton){
@@ -90,11 +97,16 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let vc: SCViewController = storyboard.instantiateViewControllerWithIdentifier("SCVC") as! SCViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
         let cell = carView.cellForRowAtIndexPath(indexPath) as! CustomCell2
-        // give car id
-        vc.carIdReciver = cell.carIdReciver
-        // give event id
-        vc.eventIdReciver = eventIdReciver
-        self.presentViewController(vc, animated: true, completion: nil)
+        if(carSpaces[indexPath.row] <= 0){
+            // todo pop a window
+        }else{
+            // give car id
+            vc.carIdReciver = cell.carIdReciver
+            // give event id
+            vc.eventDataReciver = eventDataReciver
+            vc.eventIdReciver = eventIdReciver
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

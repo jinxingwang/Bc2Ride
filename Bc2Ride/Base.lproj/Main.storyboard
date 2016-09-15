@@ -301,7 +301,7 @@
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udw-Zi-buB">
                                 <rect key="frame" x="491" y="20" width="60" height="46"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Info"/>
                                 <connections>
                                     <segue destination="oqM-5a-tpZ" kind="show" id="bVG-nN-w68"/>
                                 </connections>
@@ -359,7 +359,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ECG-jm-Xma">
                                 <rect key="frame" x="46" y="135" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="namePhonePad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="give a ride" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CS8-vf-uzX">
                                 <rect key="frame" x="46" y="20" width="508" height="21"/>
@@ -382,6 +382,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="carInfo" destination="DfY-Lf-KfU" id="YZ9-MM-R6I"/>
+                        <outlet property="carSpace" destination="2vV-dH-xef" id="tDo-rJ-yFV"/>
+                        <outlet property="name" destination="zjb-Dy-9zw" id="POI-kk-Nzx"/>
+                        <outlet property="phoneNumber" destination="ECG-jm-Xma" id="u1Y-a0-JlO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bvS-B3-TKm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -422,18 +428,36 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YbI-wb-Yl6">
-                                <rect key="frame" x="46" y="124" width="508" height="30"/>
+                                <rect key="frame" x="46" y="247" width="508" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="your phone number" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jiq-Ng-00i">
-                                <rect key="frame" x="46" y="162" width="508" height="30"/>
+                                <rect key="frame" x="46" y="285" width="508" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="the info of this car" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h3a-mB-Nhz">
+                                <rect key="frame" x="46" y="57" width="508" height="73"/>
+                                <color key="backgroundColor" red="1" green="0.94614128070000003" blue="0.81781778130000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.13369229999999999" green="0.3803109516" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Give your info to ride this car" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTS-kX-4kh">
+                                <rect key="frame" x="49" y="218" width="505" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="carInfo" destination="h3a-mB-Nhz" id="Mb8-SK-56u"/>
+                        <outlet property="name" destination="YbI-wb-Yl6" id="0kk-Qo-d2B"/>
+                        <outlet property="phoneNumber" destination="jiq-Ng-00i" id="I2A-6R-tcU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jg6-PH-V8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -441,7 +465,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="7JX-Ak-Lzf"/>
+        <segue reference="uff-IY-Yng"/>
         <segue reference="Aws-qW-CzL"/>
         <segue reference="PCH-6k-Rm3"/>
     </inferredMetricsTieBreakers>

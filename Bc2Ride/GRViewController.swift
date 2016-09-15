@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import Parse
 
 class GRViewController: UIViewController, UITextFieldDelegate {
-    @IBOutlet weak var carInfo: UILabel!
+    @IBOutlet weak var carInfo: UITextView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var carSpace: UITextField!
@@ -40,7 +41,20 @@ class GRViewController: UIViewController, UITextFieldDelegate {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // go back
-        if(sender?.tag == 0 || sender?.tag == 1){
+        if(sender?.tag == 0){
+            let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+            // give back event id
+            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventIdReciver = eventIdReciver
+        }else if(sender?.tag == 1){
+            let newcar = PFObject(className:"car")
+            newcar["eventId"] = eventIdReciver
+            newcar["carName"] = name.text
+            newcar["carInfo"] = carInfo.text
+            newcar["carSpace"] = Int(carSpace.text!)
+            newcar["phoneNumber"] = phoneNumber.text!
+            newcar.saveInBackground()
+            
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
             DestVC.eventDataReciver = eventDataReciver
