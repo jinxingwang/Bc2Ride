@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		26B4B7508D04FA978F708D37 /* Pods_Bc2Ride.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DB33C930B0A255EC6AD62D /* Pods_Bc2Ride.framework */; };
+		BE4E82411D8C831C00544622 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4E823F1D8C831C00544622 /* Bolts.framework */; };
+		BE4E82421D8C831C00544622 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE4E82401D8C831C00544622 /* Parse.framework */; };
+		BE669C691D8C80B000BB8300 /* Bc2Ride.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = BE669C681D8C80B000BB8300 /* Bc2Ride.xcworkspace */; };
 		BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A2691D8384E5006F6F64 /* CustomCell.swift */; };
 		BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE68A26A1D8384E5006F6F64 /* CustomCell.xib */; };
 		BE68A27C1D872107006F6F64 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A27B1D872107006F6F64 /* SCViewController.swift */; };
@@ -24,8 +27,6 @@
 		BE94A0AF1D8BB8470039CCA5 /* CustomCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A0AD1D8BB8470039CCA5 /* CustomCell3.xib */; };
 		BE94A0B21D8BC89D0039CCA5 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94A0B01D8BC89D0039CCA5 /* CustomCell2.swift */; };
 		BE94A0B31D8BC89D0039CCA5 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A0B11D8BC89D0039CCA5 /* CustomCell2.xib */; };
-		BEA4A99A1D89FC350091D82D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9981D89FC350091D82D /* Bolts.framework */; };
-		BEA4A99B1D89FC350091D82D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9991D89FC350091D82D /* Parse.framework */; };
 		BEA4A99D1D8A6A690091D82D /* SSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4A99C1D8A6A690091D82D /* SSViewController.swift */; };
 		BEBA7DB11D87864B0012A7BA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEBA7DAF1D87864B0012A7BA /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,9 @@
 /* Begin PBXFileReference section */
 		76B77255493D14238560842B /* Pods-Bc2Ride.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bc2Ride.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride.release.xcconfig"; sourceTree = "<group>"; };
 		B7A12B992DB2483206AD2D4A /* Pods-Bc2Ride.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bc2Ride.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride.debug.xcconfig"; sourceTree = "<group>"; };
+		BE4E823F1D8C831C00544622 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/Bolts/Bolts.framework"; sourceTree = "<group>"; };
+		BE4E82401D8C831C00544622 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/Parse/Parse.framework"; sourceTree = "<group>"; };
+		BE669C681D8C80B000BB8300 /* Bc2Ride.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Bc2Ride.xcworkspace; sourceTree = "<group>"; };
 		BE68A2691D8384E5006F6F64 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BE68A26A1D8384E5006F6F64 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
 		BE68A27B1D872107006F6F64 /* SCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
@@ -65,8 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA4A99A1D89FC350091D82D /* Bolts.framework in Frameworks */,
-				BEA4A99B1D89FC350091D82D /* Parse.framework in Frameworks */,
+				BE4E82411D8C831C00544622 /* Bolts.framework in Frameworks */,
+				BE4E82421D8C831C00544622 /* Parse.framework in Frameworks */,
 				26B4B7508D04FA978F708D37 /* Pods_Bc2Ride.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +90,8 @@
 		BE0BA0E31D89D85B009BE588 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE4E823F1D8C831C00544622 /* Bolts.framework */,
+				BE4E82401D8C831C00544622 /* Parse.framework */,
 				BEA4A9981D89FC350091D82D /* Bolts.framework */,
 				BEA4A9991D89FC350091D82D /* Parse.framework */,
 				BEA4A9961D89FBEF0091D82D /* KYCircularProgress.framework */,
@@ -100,6 +106,7 @@
 			children = (
 				BE7B19221D81D70B00A0F2B6 /* Assets.xcassets */,
 				BEBA7DAF1D87864B0012A7BA /* Main.storyboard */,
+				BE669C681D8C80B000BB8300 /* Bc2Ride.xcworkspace */,
 				BE7B19241D81D70B00A0F2B6 /* LaunchScreen.storyboard */,
 				BE7B19271D81D70B00A0F2B6 /* Info.plist */,
 			);
@@ -139,10 +146,10 @@
 				BEA4A99C1D8A6A690091D82D /* SSViewController.swift */,
 				BE68A2691D8384E5006F6F64 /* CustomCell.swift */,
 				BE68A26A1D8384E5006F6F64 /* CustomCell.xib */,
-				BE94A0AC1D8BB8470039CCA5 /* CustomCell3.swift */,
-				BE94A0AD1D8BB8470039CCA5 /* CustomCell3.xib */,
 				BE94A0B01D8BC89D0039CCA5 /* CustomCell2.swift */,
 				BE94A0B11D8BC89D0039CCA5 /* CustomCell2.xib */,
+				BE94A0AC1D8BB8470039CCA5 /* CustomCell3.swift */,
+				BE94A0AD1D8BB8470039CCA5 /* CustomCell3.xib */,
 			);
 			path = Bc2Ride;
 			sourceTree = "<group>";
@@ -213,6 +220,7 @@
 				BE94A0AF1D8BB8470039CCA5 /* CustomCell3.xib in Resources */,
 				BE7B19261D81D70B00A0F2B6 /* LaunchScreen.storyboard in Resources */,
 				BEBA7DB11D87864B0012A7BA /* Main.storyboard in Resources */,
+				BE669C691D8C80B000BB8300 /* Bc2Ride.xcworkspace in Resources */,
 				BE7B19231D81D70B00A0F2B6 /* Assets.xcassets in Resources */,
 				BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */,
 			);

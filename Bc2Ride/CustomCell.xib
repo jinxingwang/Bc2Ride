@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,17 +15,29 @@
                 <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-h1-ArA">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-h1-ArA">
                         <rect key="frame" x="0.0" y="0.0" width="259" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwk-s3-4lh">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwk-s3-4lh">
                         <rect key="frame" x="267" y="0.0" width="46" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="NDg-1E-CM5"/>
+                        </constraints>
                         <state key="normal" title="Detial"/>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="top" secondItem="nwk-s3-4lh" secondAttribute="top" id="0aW-wO-c3z"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0u4-fd-gfb"/>
+                    <constraint firstItem="nwk-s3-4lh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="9IH-Jh-5LG"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CcJ-zq-c2u"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MDM-UW-wsk"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="bottom" secondItem="nwk-s3-4lh" secondAttribute="bottom" id="MJX-l8-JHS"/>
+                    <constraint firstItem="nwk-s3-4lh" firstAttribute="leading" secondItem="nnw-h1-ArA" secondAttribute="trailing" constant="8" symbolic="YES" id="UrZ-kJ-NRA"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="eventButton" destination="nwk-s3-4lh" id="Rj1-BY-kuH"/>

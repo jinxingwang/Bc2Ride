@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class SCViewController: UIViewController {
-    @IBOutlet weak var carInfo: UITextView!
+    @IBOutlet weak var carInfo: UILabel!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     var carIdReciver : String!
@@ -21,7 +21,6 @@ class SCViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(carIdReciver)
         loadcar()
         self.hideKeyboardWhenTappedAround()
     }

@@ -119,6 +119,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         vc.carIdReciver = cell.carIdReciver
         vc.eventDataReciver = eventDataReciver
         vc.eventIdReciver = eventIdReciver
+        vc.carNameReciver = cell.driverName.text!
         self.presentViewController(vc, animated: true, completion: nil)
     }
     

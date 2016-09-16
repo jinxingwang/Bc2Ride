@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,24 +15,48 @@
                 <rect key="frame" x="0.0" y="0.0" width="446" height="101.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9Q-Br-DOV">
-                        <rect key="frame" x="8" y="8" width="334" height="42.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9Q-Br-DOV">
+                        <rect key="frame" x="8" y="8" width="334" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx8-Xh-FsM">
-                        <rect key="frame" x="350" y="8" width="88" height="85.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx8-Xh-FsM">
+                        <rect key="frame" x="350" y="8" width="88" height="86"/>
+                        <color key="backgroundColor" red="1" green="0.0" blue="0.03079350443" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="OWA-U9-WEU"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <state key="normal" title="delete">
-                            <color key="titleColor" red="1" green="0.0" blue="0.030793504433242802" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nda-oN-lDD">
-                        <rect key="frame" x="8" y="58.5" width="334" height="34.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nda-oN-lDD">
+                        <rect key="frame" x="8" y="59" width="334" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="L5w-3D-FRj"/>
+                        </constraints>
                         <state key="normal" title="phoneNumber"/>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="O9Q-Br-DOV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="25K-RE-N90"/>
+                    <constraint firstItem="Nda-oN-lDD" firstAttribute="bottom" secondItem="Kx8-Xh-FsM" secondAttribute="bottom" id="5Q7-1h-Irl"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="leading" secondItem="Nda-oN-lDD" secondAttribute="trailing" constant="8" symbolic="YES" id="74e-Ki-BIS"/>
+                    <constraint firstItem="Nda-oN-lDD" firstAttribute="top" secondItem="O9Q-Br-DOV" secondAttribute="bottom" constant="8" symbolic="YES" id="7NS-c4-z9t"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BYk-Bd-J2i"/>
+                    <constraint firstItem="O9Q-Br-DOV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CXA-Vc-WIf"/>
+                    <constraint firstItem="O9Q-Br-DOV" firstAttribute="leading" secondItem="Nda-oN-lDD" secondAttribute="leading" id="Cli-CK-76u"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="f3x-Vi-j0D"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="leading" secondItem="O9Q-Br-DOV" secondAttribute="trailing" constant="8" symbolic="YES" id="orF-4B-n3B"/>
+                    <constraint firstItem="O9Q-Br-DOV" firstAttribute="top" secondItem="Kx8-Xh-FsM" secondAttribute="top" id="w6b-cl-2Rk"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="delete" destination="Kx8-Xh-FsM" id="5nV-uP-aTE"/>

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bc2Ride/SSViewController.swift"
-            timestampString = "495701646.120693"
+            timestampString = "495746088.239873"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "deleteStudent(_:)"
             landmarkType = "5">
          </BreakpointContent>

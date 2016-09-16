@@ -13,6 +13,7 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
     var eventDataReciver = String()
     var eventIdReciver = String()
     var carIdReciver = String()
+    var carNameReciver = String()
     var studentNames: [String] = []
     var studentPhones: [String] = []
     var studentIds: [String] = []
@@ -22,7 +23,8 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        lable.text = eventDataReciver + eventIdReciver + carIdReciver
+        let indexStartOfText = carNameReciver.startIndex.advancedBy(7)
+        lable.text = "\(carNameReciver.substringFromIndex(indexStartOfText))'s car"
         loadEvent()
         let nib = UINib(nibName: "CustomCell3", bundle: nil)
         studentView.registerNib(nib, forCellReuseIdentifier: "cell3")

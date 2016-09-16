@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -14,27 +15,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="446" height="101.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driver name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11x-XS-dOy">
-                        <rect key="frame" x="8" y="8" width="334" height="42.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="driver name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11x-XS-dOy">
+                        <rect key="frame" x="8" y="8" width="334" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="43" id="ULj-Br-8mV"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="space avivale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-ST-Sga">
-                        <rect key="frame" x="8" y="51" width="334" height="42.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="space avivale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-ST-Sga">
+                        <rect key="frame" x="8" y="51" width="334" height="43"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-w8-G1V">
-                        <rect key="frame" x="350" y="8" width="88" height="42.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-w8-G1V">
+                        <rect key="frame" x="350" y="8" width="88" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="88" id="fm6-iA-cSR"/>
+                        </constraints>
                         <state key="normal" title="Student List"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-f4-Kwv">
-                        <rect key="frame" x="350" y="51" width="88" height="42.5"/>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-f4-Kwv">
+                        <rect key="frame" x="350" y="51" width="88" height="43"/>
                         <state key="normal" title="Ride"/>
                     </button>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="11x-XS-dOy" firstAttribute="top" secondItem="hyp-w8-G1V" secondAttribute="top" id="6WE-lb-Jgb"/>
+                    <constraint firstItem="11x-XS-dOy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="724-8C-3ue"/>
+                    <constraint firstItem="11x-XS-dOy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="8rQ-d5-c69"/>
+                    <constraint firstItem="11x-XS-dOy" firstAttribute="bottom" secondItem="hyp-w8-G1V" secondAttribute="bottom" id="Atc-jQ-Q8G"/>
+                    <constraint firstItem="hyp-w8-G1V" firstAttribute="leading" secondItem="Mn1-f4-Kwv" secondAttribute="leading" id="Crb-7K-q8R"/>
+                    <constraint firstItem="11x-XS-dOy" firstAttribute="leading" secondItem="Ui7-ST-Sga" secondAttribute="leading" id="Fd9-Xc-ZmL"/>
+                    <constraint firstItem="Ui7-ST-Sga" firstAttribute="top" secondItem="Mn1-f4-Kwv" secondAttribute="top" id="Hl7-yL-M5X"/>
+                    <constraint firstItem="hyp-w8-G1V" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="I6N-Q0-wjI"/>
+                    <constraint firstItem="Mn1-f4-Kwv" firstAttribute="leading" secondItem="Ui7-ST-Sga" secondAttribute="trailing" constant="8" symbolic="YES" id="TcX-aA-JSN"/>
+                    <constraint firstItem="hyp-w8-G1V" firstAttribute="trailing" secondItem="Mn1-f4-Kwv" secondAttribute="trailing" id="Uok-QM-PHZ"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Ui7-ST-Sga" secondAttribute="bottom" constant="-0.5" id="lvK-If-Wjo"/>
+                    <constraint firstItem="Mn1-f4-Kwv" firstAttribute="top" secondItem="hyp-w8-G1V" secondAttribute="bottom" id="mnc-d0-Pum"/>
+                    <constraint firstItem="Ui7-ST-Sga" firstAttribute="bottom" secondItem="Mn1-f4-Kwv" secondAttribute="bottom" id="ow2-AE-I86"/>
+                    <constraint firstItem="hyp-w8-G1V" firstAttribute="leading" secondItem="11x-XS-dOy" secondAttribute="trailing" constant="8" symbolic="YES" id="xl8-yV-xbY"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="driverName" destination="11x-XS-dOy" id="ag5-VN-til"/>
