@@ -10,10 +10,11 @@ import UIKit
 import Parse
 
 class CEViewController: UIViewController {
-    @IBOutlet weak var inputEventDescription: UITextView!
-    @IBOutlet weak var inputEventName: UITextField!
     @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputName: UITextField!
+    @IBOutlet weak var inputPassword: UITextField!
+    @IBOutlet weak var inputEventName: UITextField!
+    @IBOutlet weak var inputEventDescription: UITextView!
     @IBOutlet weak var inputEventData: UIDatePicker!
     
     override func viewDidLoad() {
@@ -43,9 +44,9 @@ class CEViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 2){
-            if(inputEventName.text?.isEmpty as! BooleanType){
-                alertPop()
-            }else if(inputEventDescription.text?.isEmpty as! BooleanType){
+            if(((inputEmail.text?.isEmpty)! as Bool) ||
+                ((inputName.text?.isEmpty)! as Bool) ||
+                ((inputEventName.text?.isEmpty)! as Bool)){
                 alertPop()
             }else{
                 let DestVC : SEViewController = segue.destinationViewController as! SEViewController

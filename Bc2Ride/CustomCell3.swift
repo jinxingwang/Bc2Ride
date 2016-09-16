@@ -1,5 +1,5 @@
 //
-//  CustomCell2.swift
+//  CustomCell3.swift
 //  Bc2Ride
 //
 //  Created by jinxingwang on 9/15/16.
@@ -8,14 +8,12 @@
 
 import UIKit
 
-class CustomCell2: UITableViewCell {
-    @IBOutlet weak var driverName: UILabel!
-    @IBOutlet weak var space: UILabel!
-    @IBOutlet weak var studentButton: UIButton!
-    @IBOutlet weak var rideButton: UIButton!
-    
-    var carIdReciver = String()
-    
+class CustomCell3: UITableViewCell {
+    @IBOutlet weak var delete: UIButton!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var phoneNumber: UIButton!
+    var studentIdReciver = String()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

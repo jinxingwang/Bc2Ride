@@ -46,7 +46,6 @@ class EIViewController: UIViewController {
                 // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
-                        //print("\(object["eventInfo"])")
                         self.eventInfo.text = "\(object["eventInfo"] as! String)"
                     }
                 }

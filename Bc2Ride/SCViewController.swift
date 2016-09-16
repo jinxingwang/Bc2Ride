@@ -41,7 +41,6 @@ class SCViewController: UIViewController {
      }
      */
     func loadcar(){
-        print(carIdReciver!)
         let query = PFQuery(className:"car")
         query.whereKey("objectId", equalTo:carIdReciver)
         query.findObjectsInBackgroundWithBlock {
@@ -91,19 +90,17 @@ class SCViewController: UIViewController {
                             for object in objects {
                                 object["carSpace"] = self.spaces - 1
                                 object.saveInBackground()
-                                let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-                                DestVC.carView.reloadData()
                             }
                         }
                     } else {
                         
                     }
+                    let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+                    // give back event id
+                    DestVC.eventDataReciver = self.eventDataReciver
+                    DestVC.eventIdReciver = self.eventIdReciver
+                    DestVC.loadEvent()
                 }
-                
-                let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-                // give back event id
-                DestVC.eventDataReciver = eventDataReciver
-                DestVC.eventIdReciver = eventIdReciver
             }
         }
     }

@@ -10,8 +10,6 @@
 		26B4B7508D04FA978F708D37 /* Pods_Bc2Ride.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6DB33C930B0A255EC6AD62D /* Pods_Bc2Ride.framework */; };
 		BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A2691D8384E5006F6F64 /* CustomCell.swift */; };
 		BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE68A26A1D8384E5006F6F64 /* CustomCell.xib */; };
-		BE68A2771D851314006F6F64 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A2751D851314006F6F64 /* CustomCell2.swift */; };
-		BE68A2781D851314006F6F64 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE68A2761D851314006F6F64 /* CustomCell2.xib */; };
 		BE68A27C1D872107006F6F64 /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A27B1D872107006F6F64 /* SCViewController.swift */; };
 		BE68A27E1D872116006F6F64 /* GRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A27D1D872116006F6F64 /* GRViewController.swift */; };
 		BE68A2801D872BAE006F6F64 /* EIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68A27F1D872BAE006F6F64 /* EIViewController.swift */; };
@@ -22,6 +20,10 @@
 		BE7B19301D81E0FC00A0F2B6 /* FEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B192F1D81E0FC00A0F2B6 /* FEViewController.swift */; };
 		BE7B19321D81E26D00A0F2B6 /* CEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B19311D81E26D00A0F2B6 /* CEViewController.swift */; };
 		BE7B19341D821F8E00A0F2B6 /* SEViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7B19331D821F8E00A0F2B6 /* SEViewController.swift */; };
+		BE94A0AE1D8BB8470039CCA5 /* CustomCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94A0AC1D8BB8470039CCA5 /* CustomCell3.swift */; };
+		BE94A0AF1D8BB8470039CCA5 /* CustomCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A0AD1D8BB8470039CCA5 /* CustomCell3.xib */; };
+		BE94A0B21D8BC89D0039CCA5 /* CustomCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE94A0B01D8BC89D0039CCA5 /* CustomCell2.swift */; };
+		BE94A0B31D8BC89D0039CCA5 /* CustomCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE94A0B11D8BC89D0039CCA5 /* CustomCell2.xib */; };
 		BEA4A99A1D89FC350091D82D /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9981D89FC350091D82D /* Bolts.framework */; };
 		BEA4A99B1D89FC350091D82D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BEA4A9991D89FC350091D82D /* Parse.framework */; };
 		BEA4A99D1D8A6A690091D82D /* SSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA4A99C1D8A6A690091D82D /* SSViewController.swift */; };
@@ -33,8 +35,6 @@
 		B7A12B992DB2483206AD2D4A /* Pods-Bc2Ride.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bc2Ride.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bc2Ride/Pods-Bc2Ride.debug.xcconfig"; sourceTree = "<group>"; };
 		BE68A2691D8384E5006F6F64 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		BE68A26A1D8384E5006F6F64 /* CustomCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell.xib; sourceTree = "<group>"; };
-		BE68A2751D851314006F6F64 /* CustomCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
-		BE68A2761D851314006F6F64 /* CustomCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
 		BE68A27B1D872107006F6F64 /* SCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
 		BE68A27D1D872116006F6F64 /* GRViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GRViewController.swift; sourceTree = "<group>"; };
 		BE68A27F1D872BAE006F6F64 /* EIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EIViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +47,10 @@
 		BE7B192F1D81E0FC00A0F2B6 /* FEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FEViewController.swift; sourceTree = "<group>"; };
 		BE7B19311D81E26D00A0F2B6 /* CEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CEViewController.swift; sourceTree = "<group>"; };
 		BE7B19331D821F8E00A0F2B6 /* SEViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SEViewController.swift; sourceTree = "<group>"; };
+		BE94A0AC1D8BB8470039CCA5 /* CustomCell3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell3.swift; sourceTree = "<group>"; };
+		BE94A0AD1D8BB8470039CCA5 /* CustomCell3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell3.xib; sourceTree = "<group>"; };
+		BE94A0B01D8BC89D0039CCA5 /* CustomCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell2.swift; sourceTree = "<group>"; };
+		BE94A0B11D8BC89D0039CCA5 /* CustomCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomCell2.xib; sourceTree = "<group>"; };
 		BEA4A9961D89FBEF0091D82D /* KYCircularProgress.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KYCircularProgress.framework; path = "../../Library/Developer/Xcode/DerivedData/Bc2Ride-gkrvxvbhouemikcehlayilwgtscc/Build/Products/Debug-iphonesimulator/KYCircularProgress/KYCircularProgress.framework"; sourceTree = "<group>"; };
 		BEA4A9981D89FC350091D82D /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "Pods/../build/Debug-iphoneos/Bolts/Bolts.framework"; sourceTree = "<group>"; };
 		BEA4A9991D89FC350091D82D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "Pods/../build/Debug-iphoneos/Parse/Parse.framework"; sourceTree = "<group>"; };
@@ -135,8 +139,10 @@
 				BEA4A99C1D8A6A690091D82D /* SSViewController.swift */,
 				BE68A2691D8384E5006F6F64 /* CustomCell.swift */,
 				BE68A26A1D8384E5006F6F64 /* CustomCell.xib */,
-				BE68A2751D851314006F6F64 /* CustomCell2.swift */,
-				BE68A2761D851314006F6F64 /* CustomCell2.xib */,
+				BE94A0AC1D8BB8470039CCA5 /* CustomCell3.swift */,
+				BE94A0AD1D8BB8470039CCA5 /* CustomCell3.xib */,
+				BE94A0B01D8BC89D0039CCA5 /* CustomCell2.swift */,
+				BE94A0B11D8BC89D0039CCA5 /* CustomCell2.xib */,
 			);
 			path = Bc2Ride;
 			sourceTree = "<group>";
@@ -176,6 +182,7 @@
 				TargetAttributes = {
 					BE7B19171D81D70B00A0F2B6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CNAQTKE8DL;
 					};
 				};
 			};
@@ -202,11 +209,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE94A0B31D8BC89D0039CCA5 /* CustomCell2.xib in Resources */,
+				BE94A0AF1D8BB8470039CCA5 /* CustomCell3.xib in Resources */,
 				BE7B19261D81D70B00A0F2B6 /* LaunchScreen.storyboard in Resources */,
 				BEBA7DB11D87864B0012A7BA /* Main.storyboard in Resources */,
 				BE7B19231D81D70B00A0F2B6 /* Assets.xcassets in Resources */,
 				BE68A26C1D8384E5006F6F64 /* CustomCell.xib in Resources */,
-				BE68A2781D851314006F6F64 /* CustomCell2.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,8 +277,9 @@
 				BE7B191E1D81D70B00A0F2B6 /* ViewController.swift in Sources */,
 				BE68A2801D872BAE006F6F64 /* EIViewController.swift in Sources */,
 				BE7B19341D821F8E00A0F2B6 /* SEViewController.swift in Sources */,
-				BE68A2771D851314006F6F64 /* CustomCell2.swift in Sources */,
+				BE94A0B21D8BC89D0039CCA5 /* CustomCell2.swift in Sources */,
 				BEA4A99D1D8A6A690091D82D /* SSViewController.swift in Sources */,
+				BE94A0AE1D8BB8470039CCA5 /* CustomCell3.swift in Sources */,
 				BE7B19301D81E0FC00A0F2B6 /* FEViewController.swift in Sources */,
 				BE68A26B1D8384E5006F6F64 /* CustomCell.swift in Sources */,
 				BE68A27E1D872116006F6F64 /* GRViewController.swift in Sources */,
@@ -393,6 +402,8 @@
 			baseConfigurationReference = B7A12B992DB2483206AD2D4A /* Pods-Bc2Ride.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
@@ -402,6 +413,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WillWang.Bc2Ride;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -410,6 +422,8 @@
 			baseConfigurationReference = 76B77255493D14238560842B /* Pods-Bc2Ride.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos/Bolts",
@@ -419,6 +433,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = WillWang.Bc2Ride;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

@@ -60,12 +60,18 @@ class GRViewController: UIViewController, UITextFieldDelegate {
                 newcar["carInfo"] = carInfo.text
                 newcar["carSpace"] = Int(carSpace.text!)
                 newcar["phoneNumber"] = phoneNumber.text!
-                newcar.saveInBackground()
-                
-                let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-                // give back event id
-                DestVC.eventDataReciver = eventDataReciver
-                DestVC.eventIdReciver = eventIdReciver
+                newcar.saveInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if success == true {
+                        let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+                        // give back event id
+                        DestVC.eventDataReciver = self.eventDataReciver
+                        DestVC.eventIdReciver = self.eventIdReciver
+                        DestVC.loadEvent()
+                    } else {
+                        self.failePop()
+                    }
+                }
             }
         }
     }
@@ -74,6 +80,18 @@ class GRViewController: UIViewController, UITextFieldDelegate {
         
         let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
+        }
+        
+        alert.addAction(enterAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func failePop() {
+        let alert = UIAlertController(title: "Save ride failed\nTry again", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
+            UIAlertAction in
+            self.dismissViewControllerAnimated(true, completion: nil)
         }
         
         alert.addAction(enterAction)

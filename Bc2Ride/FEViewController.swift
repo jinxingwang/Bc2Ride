@@ -62,7 +62,6 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 
             }
         }
-        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -76,7 +75,6 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.eventButton.addTarget(self, action: #selector(FEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
         cell.eventIdReciver = "\(eventIds[indexPath.row])"
         return cell
-        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

@@ -21,9 +21,9 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("asd")
-        print(eventIdReciver)
-        print(eventDataReciver)
+        carNames.removeAll()
+        carSpaces.removeAll()
+        carIds.removeAll()
         loadEvent()
         let nib = UINib(nibName: "CustomCell2", bundle: nil)
         carView.registerNib(nib, forCellReuseIdentifier: "cell2")
@@ -75,8 +75,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let cell = carView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! CustomCell2
         cell.driverName.text = "driver:\(carNames[indexPath.row])"
         cell.space.text = "space available:\(carSpaces[indexPath.row])"
-        cell.carButton.tag = indexPath.row
-        cell.carButton.addTarget(self, action: #selector(SEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
+        cell.rideButton.tag = indexPath.row
+        cell.rideButton.addTarget(self, action: #selector(SEViewController.showCar(_:)), forControlEvents: .TouchUpInside)
         cell.studentButton.addTarget(self, action: #selector(SEViewController.showStudent(_:)), forControlEvents: .TouchUpInside)
         cell.carIdReciver = carIds[indexPath.row]
         return cell
@@ -88,7 +88,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+        self.performSegueWithIdentifier("showCar", sender: self)
+//        self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
         //        if(carSpaces[indexPath.row] <= 0){
         //            // todo pop a window
         //            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
@@ -97,7 +98,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         //        }
     }
     
-    @IBAction func showInfo(sender: UIButton){
+    @IBAction func showCar(sender: UIButton){
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SCViewController = storyboard.instantiateViewControllerWithIdentifier("SCVC") as! SCViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
@@ -125,8 +126,12 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
+    // need more ride
+    @IBAction func needMoreRide(sender: UIButton) {
+        alertPop()
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if(segue.identifier == "showCar"){// click cell
             let DestVC : SCViewController = segue.destinationViewController as! SCViewController
             let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
@@ -135,21 +140,24 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            eventDataReciver.removeAll()
+            eventIdReciver.removeAll()
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
-        }else if(sender?.tag == 1){ // need more ride
-            
         }else if(sender?.tag == 2){ // give a ride
             let DestVC : GRViewController = segue.destinationViewController as! GRViewController
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            eventDataReciver.removeAll()
+            eventIdReciver.removeAll()
         }else if(sender?.tag == 3){ // cancle
             let DestVC : FEViewController = segue.destinationViewController as! FEViewController
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
         }else if(sender?.tag == 4){ // home
-            
+            eventDataReciver.removeAll()
+            eventIdReciver.removeAll()
         }else if(sender?.tag == 5){ //edit (todo later)
             
         }else if(sender?.tag == 6){ // info
@@ -157,8 +165,21 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            eventDataReciver.removeAll()
+            eventIdReciver.removeAll()
         }
         
+    }
+    
+    func alertPop() {
+        let alert = UIAlertController(title: "message Will for more rides.\n425-974-9158\nwjx101220@hotmail.com", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
+            UIAlertAction in
+        }
+        
+        alert.addAction(enterAction)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
 }

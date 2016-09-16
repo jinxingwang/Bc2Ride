@@ -7,42 +7,42 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="102" id="KGk-i7-Jjw" customClass="CustomCell2" customModule="Bc2Ride" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CustomCell2" customModule="Bc2Ride" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="446" height="102"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="446" height="101.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="space avivale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQN-sH-0Do">
-                        <rect key="frame" x="8" y="50" width="334" height="42.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
-                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driver name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIj-GT-GGd">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driver name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11x-XS-dOy">
                         <rect key="frame" x="8" y="8" width="334" height="42.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOK-KO-yEf">
-                        <rect key="frame" x="350" y="8" width="88" height="85.5"/>
-                        <state key="normal" title="Ride"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="space avivale" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui7-ST-Sga">
+                        <rect key="frame" x="8" y="51" width="334" height="42.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyp-w8-G1V">
+                        <rect key="frame" x="350" y="8" width="88" height="42.5"/>
+                        <state key="normal" title="Student List"/>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ARJ-6r-odo">
-                        <rect key="frame" x="254" y="8" width="88" height="85.5"/>
-                        <state key="normal" title="Student list"/>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mn1-f4-Kwv">
+                        <rect key="frame" x="350" y="51" width="88" height="42.5"/>
+                        <state key="normal" title="Ride"/>
                     </button>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="carButton" destination="gOK-KO-yEf" id="KZI-45-YvV"/>
-                <outlet property="driverName" destination="mIj-GT-GGd" id="lUF-Tu-am2"/>
-                <outlet property="space" destination="KQN-sH-0Do" id="5oR-AN-Mwi"/>
-                <outlet property="studentButton" destination="ARJ-6r-odo" id="OyF-DM-lR9"/>
+                <outlet property="driverName" destination="11x-XS-dOy" id="ag5-VN-til"/>
+                <outlet property="rideButton" destination="Mn1-f4-Kwv" id="b9T-GN-Cs3"/>
+                <outlet property="space" destination="Ui7-ST-Sga" id="Szq-F6-76P"/>
+                <outlet property="studentButton" destination="hyp-w8-G1V" id="13u-9N-VDj"/>
             </connections>
-            <point key="canvasLocation" x="349" y="213"/>
+            <point key="canvasLocation" x="-2" y="314"/>
         </tableViewCell>
     </objects>
 </document>
