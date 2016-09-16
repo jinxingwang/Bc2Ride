@@ -94,8 +94,6 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     @IBAction func deleteStudent(sender: UIButton){
-//        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc: SSViewController = storyboard.instantiateViewControllerWithIdentifier("SSVC") as! SSViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
         let cell = studentView.cellForRowAtIndexPath(indexPath) as! CustomCell3
         let query = PFQuery(className:"people")
@@ -108,10 +106,30 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
+                        let thisCarId = object["carId"] as! String
                         object.deleteInBackgroundWithBlock{
                             (success: Bool, error: NSError?) -> Void in
                             if success == true {
                                 self.loadEvent()
+                                // increase the car's space
+                                let query = PFQuery(className:"car")
+                                query.whereKey("objectId", equalTo:thisCarId)
+                                query.findObjectsInBackgroundWithBlock {
+                                    (objects: [PFObject]?, error: NSError?) -> Void in
+                                    if error == nil {
+                                        // Do something with the found objects
+                                        if let objects = objects {
+                                            for object in objects {
+                                                var spaces = Int()
+                                                spaces = object["carSpace"] as! Int
+                                                object["carSpace"] = spaces + 1
+                                                object.saveInBackground()
+                                            }
+                                        }
+                                    } else {
+                                        
+                                    }
+                                }
                             } else {
                             }
                         }

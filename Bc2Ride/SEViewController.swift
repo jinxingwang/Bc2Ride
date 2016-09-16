@@ -77,6 +77,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.space.text = "space available:\(carSpaces[indexPath.row])"
         cell.rideButton.tag = indexPath.row
         cell.rideButton.addTarget(self, action: #selector(SEViewController.showCar(_:)), forControlEvents: .TouchUpInside)
+        cell.studentButton.tag = indexPath.row
         cell.studentButton.addTarget(self, action: #selector(SEViewController.showStudent(_:)), forControlEvents: .TouchUpInside)
         cell.carIdReciver = carIds[indexPath.row]
         return cell
@@ -89,13 +90,6 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("showCar", sender: self)
-//        self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
-        //        if(carSpaces[indexPath.row] <= 0){
-        //            // todo pop a window
-        //            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
-        //        }else{
-        //            self.performSegueWithIdentifier("showCar", sender: self)
-        //        }
     }
     
     @IBAction func showCar(sender: UIButton){
@@ -116,10 +110,12 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     @IBAction func showStudent(sender: UIButton){
+        print(sender.tag)
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SSViewController = storyboard.instantiateViewControllerWithIdentifier("SSVC") as! SSViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
         let cell = carView.cellForRowAtIndexPath(indexPath) as! CustomCell2
+        print(cell.carIdReciver)
         vc.carIdReciver = cell.carIdReciver
         vc.eventDataReciver = eventDataReciver
         vc.eventIdReciver = eventIdReciver

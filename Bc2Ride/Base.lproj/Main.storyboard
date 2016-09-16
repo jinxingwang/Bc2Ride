@@ -31,10 +31,10 @@
                                     <segue destination="ydt-NZ-KDa" kind="show" id="gVr-8r-pel"/>
                                 </connections>
                             </button>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="gUV-Na-9jC">
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUV-Na-9jC">
                                 <rect key="frame" x="20" y="143" width="560" height="53"/>
-                                <date key="date" timeIntervalSinceReferenceDate="495427844.83684897">
-                                    <!--2016-09-13 02:50:44 +0000-->
+                                <date key="date" timeIntervalSinceReferenceDate="495600644.83684897">
+                                    <!--2016-09-15 02:50:44 +0000-->
                                 </date>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="473338800">
                                     <!--2016-01-01 11:00:00 +0000-->
@@ -514,7 +514,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Aws-qW-CzL"/>
-        <segue reference="Jn8-RS-hEs"/>
-        <segue reference="PCH-6k-Rm3"/>
+        <segue reference="oGg-4E-TTd"/>
+        <segue reference="v0H-Fq-EiH"/>
     </inferredMetricsTieBreakers>
 </document>
