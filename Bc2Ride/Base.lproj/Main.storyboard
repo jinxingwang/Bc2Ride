@@ -348,7 +348,7 @@
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQw-32-dWL">
                                 <rect key="frame" x="49" y="20" width="60" height="46"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Edit"/>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hvP-sK-7dF">
                                 <rect key="frame" x="49" y="74" width="502" height="395"/>
@@ -515,6 +515,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="Aws-qW-CzL"/>
         <segue reference="oGg-4E-TTd"/>
-        <segue reference="v0H-Fq-EiH"/>
+        <segue reference="PCH-6k-Rm3"/>
     </inferredMetricsTieBreakers>
 </document>

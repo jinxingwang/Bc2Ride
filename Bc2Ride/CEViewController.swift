@@ -54,10 +54,23 @@ class CEViewController: UIViewController {
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "MM/dd/yy"
                 let dateString = dateFormatter.stringFromDate(inputEventData.date)
+                newEvent["ownerName"] = inputName.text
+                newEvent["ownerEmail"] = inputEmail.text
                 newEvent["eventName"] = inputEventName.text
                 newEvent["eventData"] = dateString
                 newEvent["eventInfo"] = inputEventDescription.text
-                newEvent.saveInBackground()
+                //newEvent.saveInBackground()
+                newEvent.saveInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if success == true {
+                        let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+                        // give back event id
+                        DestVC.eventDataReciver = dateString
+                        DestVC.eventIdReciver = newEvent.objectId!
+                        DestVC.loadEvent()
+                    } else {
+                    }
+                }
                 
                 // give back event id
                 DestVC.eventDataReciver = dateString
