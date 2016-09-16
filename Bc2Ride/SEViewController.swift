@@ -17,10 +17,12 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     var carIds: [String] = []
     var eventIdReciver = String()
     var eventDataReciver = String()
+    var eventNameReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        eventName.text = eventNameReciver
         carNames.removeAll()
         carSpaces.removeAll()
         carIds.removeAll()
@@ -73,8 +75,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = carView.dequeueReusableCellWithIdentifier("cell2", forIndexPath: indexPath) as! CustomCell2
-        cell.driverName.text = "driver:\(carNames[indexPath.row])"
-        cell.space.text = "space available:\(carSpaces[indexPath.row])"
+        cell.driverName.text = "driver: \(carNames[indexPath.row])"
+        cell.space.text = "space available: \(carSpaces[indexPath.row])"
         cell.rideButton.tag = indexPath.row
         cell.rideButton.addTarget(self, action: #selector(SEViewController.showCar(_:)), forControlEvents: .TouchUpInside)
         cell.studentButton.tag = indexPath.row
@@ -105,6 +107,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             vc.eventDataReciver = eventDataReciver
             vc.eventIdReciver = eventIdReciver
+            vc.carNameReciver = cell.driverName.text!
             self.presentViewController(vc, animated: true, completion: nil)
         }
     }
@@ -137,6 +140,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.carNameReciver = cell.driverName.text!
             eventDataReciver.removeAll()
             eventIdReciver.removeAll()
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)

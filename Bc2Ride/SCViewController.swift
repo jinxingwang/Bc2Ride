@@ -10,6 +10,7 @@ import UIKit
 import Parse
 
 class SCViewController: UIViewController {
+    @IBOutlet weak var carName: UILabel!
     @IBOutlet weak var carInfo: UILabel!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
@@ -17,10 +18,13 @@ class SCViewController: UIViewController {
     var eventIdReciver = String()
     var eventDataReciver = String()
     var spaces = Int()
+    var carNameReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let indexStartOfText = carNameReciver.startIndex.advancedBy(7)
+        carName.text = "\(carNameReciver.substringFromIndex(indexStartOfText))'s car"
         loadcar()
         self.hideKeyboardWhenTappedAround()
     }
@@ -77,7 +81,7 @@ class SCViewController: UIViewController {
                 let newcar = PFObject(className:"people")
                 newcar["carId"] = carIdReciver
                 newcar["name"] = name.text
-                newcar["phoneNumber"] = Int(phoneNumber.text!)
+                newcar["phoneNumber"] = phoneNumber.text
                 newcar.saveInBackground()
                 
                 let query = PFQuery(className:"car")

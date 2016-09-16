@@ -93,6 +93,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         // give event id
         vc.eventIdReciver = cell.eventIdReciver
         vc.eventDataReciver = eventDataReciver
+        vc.eventNameReciver = cell.eventName.text!
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -103,6 +104,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventIdReciver = cell.eventIdReciver
             DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventNameReciver = cell.eventName.text!
             self.eventView.deselectRowAtIndexPath(self.eventView.indexPathForSelectedRow!, animated: true)
         }
     }
