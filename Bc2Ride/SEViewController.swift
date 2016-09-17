@@ -108,6 +108,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             vc.eventDataReciver = eventDataReciver
             vc.eventIdReciver = eventIdReciver
             vc.carNameReciver = cell.driverName.text!
+            vc.eventNameReciver = eventNameReciver
             self.presentViewController(vc, animated: true, completion: nil)
         }
     }
@@ -123,6 +124,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         vc.eventDataReciver = eventDataReciver
         vc.eventIdReciver = eventIdReciver
         vc.carNameReciver = cell.driverName.text!
+        vc.eventNameReciver = eventNameReciver
         self.presentViewController(vc, animated: true, completion: nil)
     }
     
@@ -141,6 +143,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.carNameReciver = cell.driverName.text!
+            DestVC.eventNameReciver = eventNameReciver
             eventDataReciver.removeAll()
             eventIdReciver.removeAll()
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
@@ -149,6 +152,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.eventNameReciver = eventNameReciver
             eventDataReciver.removeAll()
             eventIdReciver.removeAll()
         }else if(sender?.tag == 3){ // cancle
@@ -166,6 +170,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.eventNameReciver = eventNameReciver
             eventDataReciver.removeAll()
             eventIdReciver.removeAll()
         }

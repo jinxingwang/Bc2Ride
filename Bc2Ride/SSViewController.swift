@@ -14,6 +14,7 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
     var eventIdReciver = String()
     var carIdReciver = String()
     var carNameReciver = String()
+    var eventNameReciver = String()
     var studentNames: [String] = []
     var studentPhones: [String] = []
     var studentIds: [String] = []
@@ -151,6 +152,7 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give back event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.eventNameReciver = eventNameReciver
         }
     }
 }

@@ -9,13 +9,14 @@
 import UIKit
 import Parse
 
-class GRViewController: UIViewController, UITextFieldDelegate {
+class GRViewController: UIViewController {
     @IBOutlet weak var carInfo: UITextView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var carSpace: UITextField!
     var eventIdReciver = String()
     var eventDataReciver = String()
+    var eventNameReciver = String()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,7 @@ class GRViewController: UIViewController, UITextFieldDelegate {
             // give back event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.eventNameReciver = eventNameReciver
         }else if(sender?.tag == 1){
             if(name.text?.isEmpty as! BooleanType){
                 alertPop()
@@ -67,6 +69,7 @@ class GRViewController: UIViewController, UITextFieldDelegate {
                         // give back event id
                         DestVC.eventDataReciver = self.eventDataReciver
                         DestVC.eventIdReciver = self.eventIdReciver
+                        DestVC.eventNameReciver = self.eventNameReciver
                         DestVC.loadEvent()
                     } else {
                         self.failePop()

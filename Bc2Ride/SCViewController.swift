@@ -14,11 +14,13 @@ class SCViewController: UIViewController {
     @IBOutlet weak var carInfo: UILabel!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
-    var carIdReciver : String!
+    var carIdReciver = String()
     var eventIdReciver = String()
     var eventDataReciver = String()
-    var spaces = Int()
     var carNameReciver = String()
+    var eventNameReciver = String()
+    var spaces = Int()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -72,6 +74,7 @@ class SCViewController: UIViewController {
             // give back event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.eventNameReciver = eventNameReciver
         }else if(sender?.tag == 1){
             if(name.text?.isEmpty as! BooleanType){
                 alertPop()
@@ -103,6 +106,7 @@ class SCViewController: UIViewController {
                     // give back event id
                     DestVC.eventDataReciver = self.eventDataReciver
                     DestVC.eventIdReciver = self.eventIdReciver
+                    DestVC.eventNameReciver = self.eventNameReciver
                     DestVC.loadEvent()
                 }
             }

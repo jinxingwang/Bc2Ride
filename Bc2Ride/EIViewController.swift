@@ -12,6 +12,7 @@ import Parse
 class EIViewController: UIViewController {
     var eventIdReciver = String()
     var eventDataReciver = String()
+    var eventNameReciver = String()
     @IBOutlet weak var eventInfo: UILabel!
     
     override func viewDidLoad() {
@@ -62,6 +63,7 @@ class EIViewController: UIViewController {
             // give back event id
             DestVC.eventDataReciver = eventDataReciver
             DestVC.eventIdReciver = eventIdReciver
+            DestVC.eventNameReciver = eventNameReciver
         }
     }
 }
