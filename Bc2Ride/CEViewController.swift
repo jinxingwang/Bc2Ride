@@ -15,7 +15,7 @@ class CEViewController: UIViewController {
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputEventName: UITextField!
     @IBOutlet weak var inputEventDescription: UITextView!
-    @IBOutlet weak var inputEventData: UIDatePicker!
+    @IBOutlet weak var inputEventDate: UIDatePicker!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,19 +53,24 @@ class CEViewController: UIViewController {
                 let newEvent = PFObject(className:"event")
                 let dateFormatter = NSDateFormatter()
                 dateFormatter.dateFormat = "MM/dd/yy"
-                let dateString = dateFormatter.stringFromDate(inputEventData.date)
+                let dateString = dateFormatter.stringFromDate(inputEventDate.date)
                 newEvent["ownerName"] = inputName.text
                 newEvent["ownerEmail"] = inputEmail.text
                 newEvent["eventName"] = inputEventName.text
-                newEvent["eventData"] = dateString
+                newEvent["eventDate"] = dateString
                 newEvent["eventInfo"] = inputEventDescription.text
-                //newEvent.saveInBackground()
+                if(inputPassword.text!.isEmpty){
+                    newEvent["hasPassword"] = false
+                }else{
+                    newEvent["hasPassword"] = true
+                    newEvent["password"] = inputPassword.text
+                }
                 newEvent.saveInBackgroundWithBlock {
                     (success: Bool, error: NSError?) -> Void in
                     if success == true {
                         let DestVC : SEViewController = segue.destinationViewController as! SEViewController
                         // give back event id
-                        DestVC.eventDataReciver = dateString
+                        DestVC.eventDateReciver = dateString
                         DestVC.eventIdReciver = newEvent.objectId!
                         DestVC.loadEvent()
                     } else {
@@ -73,7 +78,7 @@ class CEViewController: UIViewController {
                 }
                 
                 // give back event id
-                DestVC.eventDataReciver = dateString
+                DestVC.eventDateReciver = dateString
             }
         }
     }

@@ -13,7 +13,8 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     @IBOutlet weak var eventView: UITableView!
     var eventNames: [String] = []
     var eventIds: [String] = []
-    var eventDataReciver = String()
+    var eventHasPasswords: [Bool] = []
+    var eventDateReciver = String()
     var eventIdReciver = String()
     
     override func viewDidLoad() {
@@ -44,7 +45,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
      */
     func loadEvents(){
         let query = PFQuery(className:"event")
-        query.whereKey("eventData", equalTo:eventDataReciver)
+        query.whereKey("eventDate", equalTo:eventDateReciver)
         query.findObjectsInBackgroundWithBlock {
             (objects: [PFObject]?, error: NSError?) -> Void in
             if error == nil {
@@ -55,6 +56,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
                     for object in objects {
                         self.eventNames.append("\(object["eventName"])")
                         self.eventIds.append(object.objectId!)
+                        self.eventHasPasswords.append(object["hasPassword"] as! Bool)
                     }
                 }
                 self.eventView.reloadData()
@@ -74,6 +76,9 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         cell.eventButton.tag = indexPath.row
         cell.eventButton.addTarget(self, action: #selector(FEViewController.showInfo(_:)), forControlEvents: .TouchUpInside)
         cell.eventIdReciver = "\(eventIds[indexPath.row])"
+        if(eventHasPasswords[indexPath.row]){
+            cell.lockImage.image = UIImage(named: "passwordKey")
+        }
         return cell
     }
     
@@ -92,7 +97,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let cell = eventView.cellForRowAtIndexPath(indexPath) as! CustomCell
         // give event id
         vc.eventIdReciver = cell.eventIdReciver
-        vc.eventDataReciver = eventDataReciver
+        vc.eventDateReciver = eventDateReciver
         vc.eventNameReciver = cell.eventName.text!
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -103,7 +108,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
             // give event id
             DestVC.eventIdReciver = cell.eventIdReciver
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventNameReciver = cell.eventName.text!
             self.eventView.deselectRowAtIndexPath(self.eventView.indexPathForSelectedRow!, animated: true)
         }

@@ -9,41 +9,51 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="CustomCell" customModule="Bc2Ride" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="321" height="44"/>
+            <rect key="frame" x="0.0" y="0.0" width="560" height="50"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="560" height="49.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwk-s3-4lh">
+                        <rect key="frame" x="506" y="3" width="46" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="46" id="NDg-1E-CM5"/>
+                        </constraints>
+                        <state key="normal" title="Detail"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Id5-J3-xu5">
+                        <rect key="frame" x="8" y="10" width="30" height="30"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnw-h1-ArA">
-                        <rect key="frame" x="0.0" y="0.0" width="259" height="43"/>
+                        <rect key="frame" x="46" y="3" width="253" height="43"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="253" id="MkA-8c-2lY"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwk-s3-4lh">
-                        <rect key="frame" x="267" y="0.0" width="46" height="43"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="46" id="NDg-1E-CM5"/>
-                        </constraints>
-                        <state key="normal" title="Detial"/>
-                    </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="nnw-h1-ArA" firstAttribute="top" secondItem="nwk-s3-4lh" secondAttribute="top" id="0aW-wO-c3z"/>
-                    <constraint firstItem="nnw-h1-ArA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="0u4-fd-gfb"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="3g6-Zh-CHb"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="bottom" secondItem="nwk-s3-4lh" secondAttribute="bottom" id="8UD-67-iRF"/>
                     <constraint firstItem="nwk-s3-4lh" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="9IH-Jh-5LG"/>
-                    <constraint firstItem="nnw-h1-ArA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CcJ-zq-c2u"/>
-                    <constraint firstItem="nnw-h1-ArA" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MDM-UW-wsk"/>
-                    <constraint firstItem="nnw-h1-ArA" firstAttribute="bottom" secondItem="nwk-s3-4lh" secondAttribute="bottom" id="MJX-l8-JHS"/>
-                    <constraint firstItem="nwk-s3-4lh" firstAttribute="leading" secondItem="nnw-h1-ArA" secondAttribute="trailing" constant="8" symbolic="YES" id="UrZ-kJ-NRA"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="leading" secondItem="Id5-J3-xu5" secondAttribute="trailing" constant="8" symbolic="YES" id="9fO-AO-dZj"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="centerY" secondItem="Id5-J3-xu5" secondAttribute="centerY" id="9jU-fJ-j63"/>
+                    <constraint firstItem="Id5-J3-xu5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="Mov-F2-fiu"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="46" id="P7N-Lz-i1T"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-5" id="Ps8-GM-O9v"/>
+                    <constraint firstItem="nnw-h1-ArA" firstAttribute="top" secondItem="nwk-s3-4lh" secondAttribute="top" id="Vbj-rR-wqY"/>
+                    <constraint firstItem="Id5-J3-xu5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="hmA-to-A5U"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="eventButton" destination="nwk-s3-4lh" id="Rj1-BY-kuH"/>
                 <outlet property="eventName" destination="nnw-h1-ArA" id="JoA-Tw-edN"/>
+                <outlet property="lockImage" destination="Id5-J3-xu5" id="xXR-R9-n3L"/>
             </connections>
-            <point key="canvasLocation" x="318.5" y="259"/>
+            <point key="canvasLocation" x="318" y="259"/>
         </tableViewCell>
     </objects>
 </document>

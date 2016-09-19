@@ -16,7 +16,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     var carSpaces: [Int] = []
     var carIds: [String] = []
     var eventIdReciver = String()
-    var eventDataReciver = String()
+    var eventDateReciver = String()
     var eventNameReciver = String()
     
     override func viewDidLoad() {
@@ -105,7 +105,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give car id
             vc.carIdReciver = cell.carIdReciver
             // give event id
-            vc.eventDataReciver = eventDataReciver
+            vc.eventDateReciver = eventDateReciver
             vc.eventIdReciver = eventIdReciver
             vc.carNameReciver = cell.driverName.text!
             vc.eventNameReciver = eventNameReciver
@@ -121,7 +121,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let cell = carView.cellForRowAtIndexPath(indexPath) as! CustomCell2
         print(cell.carIdReciver)
         vc.carIdReciver = cell.carIdReciver
-        vc.eventDataReciver = eventDataReciver
+        vc.eventDateReciver = eventDateReciver
         vc.eventIdReciver = eventIdReciver
         vc.carNameReciver = cell.driverName.text!
         vc.eventNameReciver = eventNameReciver
@@ -140,38 +140,38 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
             // give car id
             DestVC.carIdReciver = cell.carIdReciver
             // give event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.carNameReciver = cell.driverName.text!
             DestVC.eventNameReciver = eventNameReciver
-            eventDataReciver.removeAll()
+            eventDateReciver.removeAll()
             eventIdReciver.removeAll()
             self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
         }else if(sender?.tag == 2){ // give a ride
             let DestVC : GRViewController = segue.destinationViewController as! GRViewController
             // give event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
-            eventDataReciver.removeAll()
+            eventDateReciver.removeAll()
             eventIdReciver.removeAll()
         }else if(sender?.tag == 3){ // cancle
             let DestVC : FEViewController = segue.destinationViewController as! FEViewController
             // give event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
         }else if(sender?.tag == 4){ // home
-            eventDataReciver.removeAll()
+            eventDateReciver.removeAll()
             eventIdReciver.removeAll()
         }else if(sender?.tag == 5){ //edit (todo later)
-            
+
         }else if(sender?.tag == 6){ // info
             let DestVC : EIViewController = segue.destinationViewController as! EIViewController
             // give event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
-            eventDataReciver.removeAll()
+            eventDateReciver.removeAll()
             eventIdReciver.removeAll()
         }
         

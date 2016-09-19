@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class SSViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var eventDataReciver = String()
+    var eventDateReciver = String()
     var eventIdReciver = String()
     var carIdReciver = String()
     var carNameReciver = String()
@@ -150,7 +150,7 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
         if(sender?.tag == 1){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
         }

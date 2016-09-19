@@ -9,6 +9,7 @@
 import UIKit
 
 class CustomCell: UITableViewCell {
+    @IBOutlet weak var lockImage: UIImageView!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventButton: UIButton!
     var eventIdReciver = String()

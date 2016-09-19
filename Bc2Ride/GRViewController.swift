@@ -15,7 +15,7 @@ class GRViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var carSpace: UITextField!
     var eventIdReciver = String()
-    var eventDataReciver = String()
+    var eventDateReciver = String()
     var eventNameReciver = String()
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class GRViewController: UIViewController {
         if(sender?.tag == 0){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
         }else if(sender?.tag == 1){
@@ -67,7 +67,7 @@ class GRViewController: UIViewController {
                     if success == true {
                         let DestVC : SEViewController = segue.destinationViewController as! SEViewController
                         // give back event id
-                        DestVC.eventDataReciver = self.eventDataReciver
+                        DestVC.eventDateReciver = self.eventDateReciver
                         DestVC.eventIdReciver = self.eventIdReciver
                         DestVC.eventNameReciver = self.eventNameReciver
                         DestVC.loadEvent()

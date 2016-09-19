@@ -21,11 +21,18 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nda-oN-lDD">
+                        <rect key="frame" x="8" y="59" width="334" height="35"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="K41-RX-dOC"/>
+                        </constraints>
+                        <state key="normal" title="phoneNumber"/>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kx8-Xh-FsM">
-                        <rect key="frame" x="350" y="8" width="88" height="86"/>
+                        <rect key="frame" x="350" y="29" width="88" height="43"/>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.03079350443" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="88" id="OWA-U9-WEU"/>
+                            <constraint firstAttribute="width" constant="88" id="hcb-uh-PRI"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                         <state key="normal" title="delete">
@@ -37,25 +44,18 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nda-oN-lDD">
-                        <rect key="frame" x="8" y="59" width="334" height="35"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="L5w-3D-FRj"/>
-                        </constraints>
-                        <state key="normal" title="phoneNumber"/>
-                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="O9Q-Br-DOV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="25K-RE-N90"/>
-                    <constraint firstItem="Nda-oN-lDD" firstAttribute="bottom" secondItem="Kx8-Xh-FsM" secondAttribute="bottom" id="5Q7-1h-Irl"/>
-                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="leading" secondItem="Nda-oN-lDD" secondAttribute="trailing" constant="8" symbolic="YES" id="74e-Ki-BIS"/>
-                    <constraint firstItem="Nda-oN-lDD" firstAttribute="top" secondItem="O9Q-Br-DOV" secondAttribute="bottom" constant="8" symbolic="YES" id="7NS-c4-z9t"/>
-                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BYk-Bd-J2i"/>
+                    <constraint firstItem="Nda-oN-lDD" firstAttribute="top" secondItem="O9Q-Br-DOV" secondAttribute="bottom" constant="8" symbolic="YES" id="4Gd-Dk-rop"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="21" id="7Hy-Wc-7C7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Nda-oN-lDD" secondAttribute="bottom" constant="-0.5" id="9Ag-vF-nNa"/>
                     <constraint firstItem="O9Q-Br-DOV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CXA-Vc-WIf"/>
-                    <constraint firstItem="O9Q-Br-DOV" firstAttribute="leading" secondItem="Nda-oN-lDD" secondAttribute="leading" id="Cli-CK-76u"/>
-                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="f3x-Vi-j0D"/>
-                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="leading" secondItem="O9Q-Br-DOV" secondAttribute="trailing" constant="8" symbolic="YES" id="orF-4B-n3B"/>
-                    <constraint firstItem="O9Q-Br-DOV" firstAttribute="top" secondItem="Kx8-Xh-FsM" secondAttribute="top" id="w6b-cl-2Rk"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="OIf-bz-qVO"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="leading" secondItem="Nda-oN-lDD" secondAttribute="trailing" constant="8" symbolic="YES" id="OU6-Sx-OBw"/>
+                    <constraint firstItem="Nda-oN-lDD" firstAttribute="leading" secondItem="O9Q-Br-DOV" secondAttribute="leading" id="Vob-9k-xGl"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="cka-Na-ibW"/>
+                    <constraint firstItem="Kx8-Xh-FsM" firstAttribute="leading" secondItem="O9Q-Br-DOV" secondAttribute="trailing" constant="8" symbolic="YES" id="tyQ-aQ-DfS"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

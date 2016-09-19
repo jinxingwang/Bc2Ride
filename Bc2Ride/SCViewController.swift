@@ -16,7 +16,7 @@ class SCViewController: UIViewController {
     @IBOutlet weak var phoneNumber: UITextField!
     var carIdReciver = String()
     var eventIdReciver = String()
-    var eventDataReciver = String()
+    var eventDateReciver = String()
     var carNameReciver = String()
     var eventNameReciver = String()
     var spaces = Int()
@@ -72,7 +72,7 @@ class SCViewController: UIViewController {
         if(sender?.tag == 0){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
         }else if(sender?.tag == 1){
@@ -104,7 +104,7 @@ class SCViewController: UIViewController {
                     }
                     let DestVC : SEViewController = segue.destinationViewController as! SEViewController
                     // give back event id
-                    DestVC.eventDataReciver = self.eventDataReciver
+                    DestVC.eventDateReciver = self.eventDateReciver
                     DestVC.eventIdReciver = self.eventIdReciver
                     DestVC.eventNameReciver = self.eventNameReciver
                     DestVC.loadEvent()

@@ -29,7 +29,7 @@ class ViewController: UIViewController {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "MM/dd/yy"
             let dateString = dateFormatter.stringFromDate(datapicked.date)
-            DestVC.eventDataReciver = dateString
+            DestVC.eventDateReciver = dateString
         }
     }
     

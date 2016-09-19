@@ -11,13 +11,15 @@ import Parse
 
 class EIViewController: UIViewController {
     var eventIdReciver = String()
-    var eventDataReciver = String()
+    var eventDateReciver = String()
     var eventNameReciver = String()
-    @IBOutlet weak var eventInfo: UILabel!
+    @IBOutlet weak var eventInfo: UITextView!
+    //@IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+//        eventInfo.sizeToFit()
         loadEventInfo()
         self.hideKeyboardWhenTappedAround()
     }
@@ -47,7 +49,7 @@ class EIViewController: UIViewController {
                 // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
-                        self.eventInfo.text = "\(object["eventInfo"] as! String)"
+                        self.eventInfo.text = "event name: \n\(object["eventName"] as! String)\nevent Date: \n\(object["eventDate"] as! String)\nevent owner: \n\(object["ownerName"] as! String)\nowner email: \n\(object["ownerEmail"] as! String)\nevent info: \n\(object["eventInfo"] as! String)"
                     }
                 }
             } else {
@@ -61,7 +63,7 @@ class EIViewController: UIViewController {
         if(sender?.tag == 1){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             // give back event id
-            DestVC.eventDataReciver = eventDataReciver
+            DestVC.eventDateReciver = eventDateReciver
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
         }
