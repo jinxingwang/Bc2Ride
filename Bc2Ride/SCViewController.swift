@@ -61,7 +61,7 @@ class SCViewController: UIViewController {
                     }
                 }
             } else {
-                
+                print(error)
             }
         }
     }

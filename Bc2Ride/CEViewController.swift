@@ -58,7 +58,7 @@ class CEViewController: UIViewController {
                 let dateString = dateFormatter.stringFromDate(inputEventDate.date)
                 newEvent["ownerName"] = inputName.text
                 newEvent["ownerEmail"] = inputEmail.text
-                newEvent["onerPhoneNumber"] = inputPhoneNumber.text
+                newEvent["ownerPhoneNumber"] = inputPhoneNumber.text
                 newEvent["eventName"] = inputEventName.text
                 newEvent["eventInfo"] = inputEventDescription.text
                 newEvent["eventDate"] = dateString

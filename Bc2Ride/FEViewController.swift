@@ -62,7 +62,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 }
                 self.eventView.reloadData()
             } else {
-                
+                print(error)
             }
         }
     }
@@ -113,7 +113,6 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         if(segue.identifier == "showEvent"){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
-            print(cell.tag)
             if(eventHasPasswords[cell.eventButton.tag]){
                 alertPop(eventIds[cell.eventButton.tag], tag: cell.eventButton.tag)
             }else{

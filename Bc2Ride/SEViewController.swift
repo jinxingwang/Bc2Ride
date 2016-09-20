@@ -64,7 +64,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 }
                 self.carView.reloadData()
             } else {
-                
+                print(error)
             }
         }
     }
@@ -114,7 +114,6 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     @IBAction func showStudent(sender: UIButton){
-        print(sender.tag)
         let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
         let vc: SSViewController = storyboard.instantiateViewControllerWithIdentifier("SSVC") as! SSViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
@@ -145,7 +144,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
                 }
                 self.carView.reloadData()
             } else {
-                
+                print(error)
             }
         }
     }

@@ -49,11 +49,11 @@ class EIViewController: UIViewController {
                 // Do something with the found objects
                 if let objects = objects {
                     for object in objects {
-                        self.eventInfo.text = "event name: \n\(object["eventName"] as! String)\nevent Date: \n\(object["eventDate"] as! String)\nevent owner: \n\(object["ownerName"] as! String)\nowner email: \n\(object["ownerEmail"] as! String)\nevent info: \n\(object["eventInfo"] as! String)"
+                        self.eventInfo.text = "\n\nevent name: \n\(object["eventName"] as! String)\n\nevent Date: \n\(object["eventDate"] as! String)\n\nevent owner: \n\(object["ownerName"] as! String)\n\nowner email: \n\(object["ownerEmail"] as! String)\n\nowner phone Number: \n\(object["ownerPhoneNumber"] as! String)\n\nevent info: \n\(object["eventInfo"] as! String)"
                     }
                 }
             } else {
-                
+                print(error)
             }
         }
     }

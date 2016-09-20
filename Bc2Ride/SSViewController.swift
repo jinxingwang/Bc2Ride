@@ -66,7 +66,7 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
                     }
                 }
             } else {
-                
+                print(error)
             }
             self.studentView.reloadData()
         }
@@ -130,16 +130,17 @@ class SSViewController: UIViewController, UITableViewDataSource, UITableViewDele
                                             }
                                         }
                                     } else {
-                                        
+                                        print(error)
                                     }
                                 }
                             } else {
+                                print(error)
                             }
                         }
                     }
                 }
             } else {
-                
+                print(error)
             }
             self.studentView.reloadData()
         }
