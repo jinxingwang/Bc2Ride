@@ -53,7 +53,7 @@
                 <outlet property="eventName" destination="nnw-h1-ArA" id="JoA-Tw-edN"/>
                 <outlet property="lockImage" destination="Id5-J3-xu5" id="xXR-R9-n3L"/>
             </connections>
-            <point key="canvasLocation" x="318" y="259"/>
+            <point key="canvasLocation" x="123" y="134"/>
         </tableViewCell>
     </objects>
 </document>

@@ -14,13 +14,13 @@ class SCViewController: UIViewController {
     @IBOutlet weak var carInfo: UILabel!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
+    @IBOutlet weak var address: UITextField!
     var carIdReciver = String()
     var eventIdReciver = String()
     var eventDateReciver = String()
     var carNameReciver = String()
     var eventNameReciver = String()
     var spaces = Int()
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +35,6 @@ class SCViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     /*
      // MARK: - Navigation
@@ -76,45 +75,55 @@ class SCViewController: UIViewController {
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
         }else if(sender?.tag == 1){
-            if(name.text?.isEmpty as! BooleanType){
-                alertPop()
-            }else if(phoneNumber.text?.isEmpty as! BooleanType){
-                alertPop()
+            if(name.text!.isEmpty || phoneNumber.text!.isEmpty){
+                alertPop("Missing inputs")
             }else{
-                let newcar = PFObject(className:"people")
-                newcar["carId"] = carIdReciver
-                newcar["name"] = name.text
-                newcar["phoneNumber"] = phoneNumber.text
-                newcar.saveInBackground()
-                
-                let query = PFQuery(className:"car")
-                query.whereKey("objectId", equalTo:carIdReciver)
-                query.findObjectsInBackgroundWithBlock {
-                    (objects: [PFObject]?, error: NSError?) -> Void in
-                    if error == nil {
-                        // Do something with the found objects
-                        if let objects = objects {
-                            for object in objects {
-                                object["carSpace"] = self.spaces - 1
-                                object.saveInBackground()
+                let newguy = PFObject(className:"people")
+                newguy["carId"] = carIdReciver
+                newguy["name"] = name.text
+                newguy["phoneNumber"] = phoneNumber.text
+                newguy["address"] = address.text
+                newguy.saveInBackgroundWithBlock {
+                    (success: Bool, error: NSError?) -> Void in
+                    if success == true {
+                        let query = PFQuery(className:"car")
+                        query.whereKey("objectId", equalTo:self.carIdReciver)
+                        query.findObjectsInBackgroundWithBlock {
+                            (objects: [PFObject]?, error: NSError?) -> Void in
+                            if error == nil {
+                                // Do something with the found objects
+                                if let objects = objects {
+                                    for object in objects {
+                                        object["carSpace"] = self.spaces - 1
+                                        object.saveInBackgroundWithBlock {
+                                            (success: Bool, error: NSError?) -> Void in
+                                            if success == true {
+                                                let DestVC : SEViewController = segue.destinationViewController as! SEViewController
+                                                // give back event id
+                                                DestVC.eventDateReciver = self.eventDateReciver
+                                                DestVC.eventIdReciver = self.eventIdReciver
+                                                DestVC.eventNameReciver = self.eventNameReciver
+                                                DestVC.loadEvent()
+                                            }else{
+                                                self.alertPop("Error try again")
+                                            }
+                                        }
+                                    }
+                                }
+                            } else {
+                                self.alertPop("Error try again")
                             }
                         }
                     } else {
-                        
+                        self.alertPop("Error try again")
                     }
-                    let DestVC : SEViewController = segue.destinationViewController as! SEViewController
-                    // give back event id
-                    DestVC.eventDateReciver = self.eventDateReciver
-                    DestVC.eventIdReciver = self.eventIdReciver
-                    DestVC.eventNameReciver = self.eventNameReciver
-                    DestVC.loadEvent()
                 }
             }
         }
     }
     
-    func alertPop() {
-        let alert = UIAlertController(title: "Missing inputs", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+    func alertPop(input: String) {
+        let alert = UIAlertController(title: input, message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
         
         let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
@@ -123,5 +132,4 @@ class SCViewController: UIViewController {
         alert.addAction(enterAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
 }

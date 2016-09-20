@@ -11,6 +11,7 @@ import Parse
 
 class FEViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     @IBOutlet weak var eventView: UITableView!
+    var password: UITextField!
     var eventNames: [String] = []
     var eventIds: [String] = []
     var eventHasPasswords: [Bool] = []
@@ -87,7 +88,7 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44
+        return 50
     }
     
     @IBAction func showInfo(sender: UIButton){
@@ -95,22 +96,94 @@ class FEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let vc: SEViewController = storyboard.instantiateViewControllerWithIdentifier("SEVC") as! SEViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
         let cell = eventView.cellForRowAtIndexPath(indexPath) as! CustomCell
-        // give event id
-        vc.eventIdReciver = cell.eventIdReciver
-        vc.eventDateReciver = eventDateReciver
-        vc.eventNameReciver = cell.eventName.text!
-        self.presentViewController(vc, animated: true, completion: nil)
+        if(eventHasPasswords[sender.tag]){
+            alertPop(eventIds[cell.eventButton.tag], tag: cell.eventButton.tag)
+        }else{
+            // give event id
+            vc.eventIdReciver = cell.eventIdReciver
+            vc.eventDateReciver = eventDateReciver
+            vc.eventNameReciver = cell.eventName.text!
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
     }
+    
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showEvent"){
             let DestVC : SEViewController = segue.destinationViewController as! SEViewController
             let cell = eventView.cellForRowAtIndexPath(eventView.indexPathForSelectedRow!) as! CustomCell
-            // give event id
-            DestVC.eventIdReciver = cell.eventIdReciver
-            DestVC.eventDateReciver = eventDateReciver
-            DestVC.eventNameReciver = cell.eventName.text!
-            self.eventView.deselectRowAtIndexPath(self.eventView.indexPathForSelectedRow!, animated: true)
+            print(cell.tag)
+            if(eventHasPasswords[cell.eventButton.tag]){
+                alertPop(eventIds[cell.eventButton.tag], tag: cell.eventButton.tag)
+            }else{
+                // give event id
+                DestVC.eventIdReciver = cell.eventIdReciver
+                DestVC.eventDateReciver = eventDateReciver
+                DestVC.eventNameReciver = cell.eventName.text!
+                self.eventView.deselectRowAtIndexPath(self.eventView.indexPathForSelectedRow!, animated: true)
+            }
         }
     }
+    
+    func checkPassword(id: String, password: String, tag: Int){
+        let query = PFQuery(className:"event")
+        query.whereKey("objectId", equalTo:id)
+        
+        do {
+            let objects: [PFObject] = try query.findObjects()
+            for object in objects {
+                if(object["password"] as! String == password){
+                    let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                    let vc: SEViewController = storyboard.instantiateViewControllerWithIdentifier("SEVC") as! SEViewController
+                    let indexPath = NSIndexPath(forRow: tag, inSection: 0)
+                    let cell = eventView.cellForRowAtIndexPath(indexPath) as! CustomCell
+                    // give event id
+                    vc.eventIdReciver = cell.eventIdReciver
+                    vc.eventDateReciver = eventDateReciver
+                    vc.eventNameReciver = cell.eventName.text!
+                    self.presentViewController(vc, animated: true, completion: nil)
+                }else{
+                    alertPop2("wrong password")
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    func config(password: UITextField){
+        password.placeholder = "event password"
+        self.password = password
+    }
+    
+    func alertPop(id: String, tag: Int){
+        let alert = UIAlertController(title: "password required", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let enterAction = UIAlertAction(title: "enter", style: UIAlertActionStyle.Default){
+            UIAlertAction in
+            self.checkPassword(id, password: self.password.text!,tag: tag)
+        }
+        
+        let cancelAction = UIAlertAction(title: "cancel", style: UIAlertActionStyle.Cancel){
+            UIAlertAction in
+        }
+        
+        alert.addTextFieldWithConfigurationHandler(config)
+        alert.addAction(enterAction)
+        alert.addAction(cancelAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func alertPop2(input: String) {
+        let alert = UIAlertController(title: input, message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
+            UIAlertAction in
+        }
+        
+        alert.addAction(enterAction)
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+
 }

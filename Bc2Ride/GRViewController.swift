@@ -49,12 +49,8 @@ class GRViewController: UIViewController {
             DestVC.eventIdReciver = eventIdReciver
             DestVC.eventNameReciver = eventNameReciver
         }else if(sender?.tag == 1){
-            if(name.text?.isEmpty as! BooleanType){
-                alertPop()
-            }else if(carSpace.text?.isEmpty as! BooleanType){
-                alertPop()
-            }else if(phoneNumber.text?.isEmpty as! BooleanType){
-                alertPop()
+            if(name.text!.isEmpty || carSpace.text!.isEmpty || phoneNumber.text!.isEmpty){
+                alertPop("Missing inputs")
             }else{
                 let newcar = PFObject(className:"car")
                 newcar["eventId"] = eventIdReciver
@@ -72,14 +68,15 @@ class GRViewController: UIViewController {
                         DestVC.eventNameReciver = self.eventNameReciver
                         DestVC.loadEvent()
                     } else {
-                        self.failePop()
+                        self.alertPop("Save ride failed\nTry again")
                     }
                 }
             }
         }
     }
-    func alertPop() {
-        let alert = UIAlertController(title: "Missing inputs", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+    
+    func alertPop(input: String) {
+        let alert = UIAlertController(title: input, message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
         
         let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
@@ -89,16 +86,5 @@ class GRViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func failePop() {
-        let alert = UIAlertController(title: "Save ride failed\nTry again", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
-        
-        let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
-            UIAlertAction in
-            self.dismissViewControllerAnimated(true, completion: nil)
-        }
-        
-        alert.addAction(enterAction)
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
 }
 

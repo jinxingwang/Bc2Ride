@@ -100,7 +100,7 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
         let cell = carView.cellForRowAtIndexPath(indexPath) as! CustomCell2
         if(carSpaces[indexPath.row] <= 0){
-            // todo pop a window
+            alertPop("not enough space in this car")
         }else{
             // give car id
             vc.carIdReciver = cell.carIdReciver
@@ -119,7 +119,6 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         let vc: SSViewController = storyboard.instantiateViewControllerWithIdentifier("SSVC") as! SSViewController
         let indexPath = NSIndexPath(forRow: sender.tag, inSection: 0)
         let cell = carView.cellForRowAtIndexPath(indexPath) as! CustomCell2
-        print(cell.carIdReciver)
         vc.carIdReciver = cell.carIdReciver
         vc.eventDateReciver = eventDateReciver
         vc.eventIdReciver = eventIdReciver
@@ -130,23 +129,45 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
     
     // need more ride
     @IBAction func needMoreRide(sender: UIButton) {
-        alertPop()
+        let query = PFQuery(className:"event")
+        query.whereKey("objectId", equalTo:eventIdReciver)
+        query.findObjectsInBackgroundWithBlock {
+            (objects: [PFObject]?, error: NSError?) -> Void in
+            if error == nil {
+                // The find succeeded.
+                print("Successfully retrieved \(objects!.count) scores.")
+                // Do something with the found objects
+                if let objects = objects {
+                    for object in objects {
+                        let help = "contact [\(object["ownerName"])] for more rides\nEmail: \(object["ownerEmail"])\nPhone Number: \(object["ownerPhoneNumber"])"
+                        self.alertPop(help)
+                    }
+                }
+                self.carView.reloadData()
+            } else {
+                
+            }
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "showCar"){// click cell
             let DestVC : SCViewController = segue.destinationViewController as! SCViewController
             let cell = carView.cellForRowAtIndexPath(carView.indexPathForSelectedRow!) as! CustomCell2
-            // give car id
-            DestVC.carIdReciver = cell.carIdReciver
-            // give event id
-            DestVC.eventDateReciver = eventDateReciver
-            DestVC.eventIdReciver = eventIdReciver
-            DestVC.carNameReciver = cell.driverName.text!
-            DestVC.eventNameReciver = eventNameReciver
-            eventDateReciver.removeAll()
-            eventIdReciver.removeAll()
-            self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+            if(carSpaces[cell.rideButton.tag] <= 0){
+                alertPop("not enough space in this car")
+            }else{
+                // give car id
+                DestVC.carIdReciver = cell.carIdReciver
+                // give event id
+                DestVC.eventDateReciver = eventDateReciver
+                DestVC.eventIdReciver = eventIdReciver
+                DestVC.carNameReciver = cell.driverName.text!
+                DestVC.eventNameReciver = eventNameReciver
+                eventDateReciver.removeAll()
+                eventIdReciver.removeAll()
+                self.carView.deselectRowAtIndexPath(self.carView.indexPathForSelectedRow!, animated: true)
+            }
         }else if(sender?.tag == 2){ // give a ride
             let DestVC : GRViewController = segue.destinationViewController as! GRViewController
             // give event id
@@ -177,8 +198,8 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         
     }
     
-    func alertPop() {
-        let alert = UIAlertController(title: "message Will for more rides.\n425-974-9158\nwjx101220@hotmail.com", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+    func alertPop(input: String) {
+        let alert = UIAlertController(title: input, message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
         
         let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
@@ -187,5 +208,4 @@ class SEViewController: UIViewController, UITableViewDataSource, UITableViewDele
         alert.addAction(enterAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
-    
 }

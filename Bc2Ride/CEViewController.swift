@@ -10,8 +10,9 @@ import UIKit
 import Parse
 
 class CEViewController: UIViewController {
-    @IBOutlet weak var inputEmail: UITextField!
     @IBOutlet weak var inputName: UITextField!
+    @IBOutlet weak var inputEmail: UITextField!
+    @IBOutlet weak var inputPhoneNumber: UITextField!
     @IBOutlet weak var inputPassword: UITextField!
     @IBOutlet weak var inputEventName: UITextField!
     @IBOutlet weak var inputEventDescription: UITextView!
@@ -44,10 +45,11 @@ class CEViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(sender?.tag == 2){
-            if(((inputEmail.text?.isEmpty)! as Bool) ||
-                ((inputName.text?.isEmpty)! as Bool) ||
+            if(((inputName.text?.isEmpty)! as Bool) ||
+                ((inputEmail.text?.isEmpty)! as Bool) ||
+                ((inputPhoneNumber.text?.isEmpty)! as Bool) ||
                 ((inputEventName.text?.isEmpty)! as Bool)){
-                alertPop()
+                alertPop("Missing inputs")
             }else{
                 let DestVC : SEViewController = segue.destinationViewController as! SEViewController
                 let newEvent = PFObject(className:"event")
@@ -56,9 +58,11 @@ class CEViewController: UIViewController {
                 let dateString = dateFormatter.stringFromDate(inputEventDate.date)
                 newEvent["ownerName"] = inputName.text
                 newEvent["ownerEmail"] = inputEmail.text
+                newEvent["onerPhoneNumber"] = inputPhoneNumber.text
                 newEvent["eventName"] = inputEventName.text
-                newEvent["eventDate"] = dateString
                 newEvent["eventInfo"] = inputEventDescription.text
+                newEvent["eventDate"] = dateString
+                
                 if(inputPassword.text!.isEmpty){
                     newEvent["hasPassword"] = false
                 }else{
@@ -83,12 +87,13 @@ class CEViewController: UIViewController {
         }
     }
     
-    func alertPop() {
-        let alert = UIAlertController(title: "Missing inputs", message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
+    func alertPop(input: String) {
+        let alert = UIAlertController(title: input, message: nil, preferredStyle:  UIAlertControllerStyle.Alert)
         
         let enterAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel){
             UIAlertAction in
         }
+        
         alert.addAction(enterAction)
         self.presentViewController(alert, animated: true, completion: nil)
     }
